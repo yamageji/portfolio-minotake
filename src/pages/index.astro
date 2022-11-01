@@ -1,11 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+import { getArticles } from "../library/cms";
+const articles = await getArticles();
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Hello Astro</h1>
-	</main>
+  <main>
+    <h1>Hello Astro</h1>
+    <ul>
+      {
+        articles.items.map((item) => (
+          <li>
+            <h2>{item.title}</h2>
+            <div set:html={item.content} />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </Layout>
 
 <style></style>
