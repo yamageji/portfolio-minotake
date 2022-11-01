@@ -1,4 +1,10 @@
-import { createClient } from "newt-client-js";
+import { createClient, Content } from "newt-client-js";
+
+interface Article extends Content {
+  title: string;
+  content: string;
+  date: string;
+}
 
 const client = createClient({
   spaceUid: import.meta.env.NEWT_SPACE_UID,
@@ -7,7 +13,7 @@ const client = createClient({
 });
 
 export const getArticles = async () => {
-  return await client.getContents({
+  return await client.getContents<Article>({
     appUid: "portfolio",
     modelUid: "article",
     query: {
