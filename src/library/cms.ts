@@ -40,7 +40,6 @@ export const getArticles = async () => {
         category: 'title',
       },
     });
-    console.log(articles);
     return articles.items;
   } catch (err) {
     console.log('~~ getArticles ~~');
@@ -54,7 +53,6 @@ export const getWorks = async () => {
       appUid: 'portfolio',
       modelUid: 'works',
     });
-    console.log(works);
     return works.items;
   } catch (err) {
     console.log('~~ getWorks ~~');
