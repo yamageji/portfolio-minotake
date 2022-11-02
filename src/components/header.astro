@@ -9,9 +9,9 @@ const links = [
 ];
 ---
 
-<nav class="header">
-  <h1>{mainTitle}</h1>
-  <ul class="links">
+<nav class="flex justify-between items-center py-6 px-4 bg-rose-200">
+  <h1 class="text-rose-500 text-xl font-bold">{mainTitle}</h1>
+  <ul class="flex gap-4 md:hidden">
     {links.map(item =>(
       <li>
         <a href={item.href}>
@@ -20,31 +20,7 @@ const links = [
       </li>
     ))}
   </ul>
-  <div class='hamburgerMenu'>
+  <div class='hidden md:block'>
     <HamburgerMenu links={links} client:visible />
   </div>
 </nav>
-
-<style>
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.links {
-  display: flex;
-  gap: 12px;
-  list-style: none;
-}
-.hamburgerMenu{
-  display: none;
-}
-@media screen and (max-width:768px) { 
-  .hamburgerMenu {
-    display: block;
-  }
-  .links {
-    display: none;
-  }
-}
-</style>
