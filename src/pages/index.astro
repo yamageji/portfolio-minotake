@@ -1,22 +1,38 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import { getArticles } from "../library/cms";
+import { getArticles, getWorks } from "../library/cms";
 const articles = await getArticles();
+const works = await getWorks();
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <h1>Hello Astro</h1>
     <ul>
-      {
-        articles.items.map((item) => (
-          <li>
-            <h2>{item.title}</h2>
-            <div set:html={item.content} />
-          </li>
-        ))
-      }
+      {articles && articles.map((item) => (
+        <li>
+          <h2>{item.title}</h2>
+          <time>{item.date}</time>
+          <div set:html={item.content} />
+        </li>
+      ))}
+    </ul>
+    
+    <ul>
+      {works && works.map((work)=>(
+        <li>
+          <h2>{work.title}</h2>
+          <img src={work['main-image'].src} alt={work['main-image'].altText}>
+          <p>_id: {work['main-image']._id}</p>
+          <p>fileType: {work['main-image'].fileType}</p>
+          <p>fileName: {work['main-image'].fileName}</p>
+          <p>alt: {work['main-image'].altText}</p>
+          <p>description: {work['main-image'].description}</p>
+          <p>caption: {work['main-image'].metadata!.caption}</p>
+          <div set:html={work.content} />
+        </li>
+      ))}
     </ul>
   </main>
 </Layout>
