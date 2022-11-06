@@ -9,18 +9,18 @@ const links = [
 ];
 ---
 
-<nav class="flex justify-between items-center py-6 px-4 bg-rose-200">
-  <h1 class="text-rose-500 text-xl font-bold">{mainTitle}</h1>
-  <ul class="flex gap-4 md:hidden">
-    {links.map(item =>(
-      <li>
-        <a href={item.href}>
-          {item.label}
-        </a>
-      </li>
-    ))}
+<nav class="flex justify-between items-center py-6 px-4 bg-teal-50">
+  <h1 class="text-teal-700 text-xl font-bold">{mainTitle}</h1>
+  <ul class="gap-4 hidden md:flex">
+    {
+      links.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))
+    }
   </ul>
-  <div class='hidden md:block'>
+  <div class="md:hidden">
     <HamburgerMenu links={links} client:visible />
   </div>
 </nav>
