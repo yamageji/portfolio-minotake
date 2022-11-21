@@ -11,11 +11,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^1.2.0",
+    "@astrojs/svelte": "^1.0.2",
     "@astrojs/tailwind": "^2.1.1",
+    "@fontsource/barlow-condensed": "^4.5.9",
+    "@fontsource/zen-kaku-gothic-new": "^4.5.16",
     "astro": "^1.6.0",
     "newt-client-js": "^3.2.2",
-    "preact": "^10.11.2",
+    "svelte": "^3.53.1",
     "tailwindcss": "^3.2.1"
   }
 }

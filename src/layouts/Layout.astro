@@ -1,5 +1,9 @@
 ---
-import Header from "../components/header.astro";
+import "@fontsource/zen-kaku-gothic-new";
+import "@fontsource/barlow-condensed";
+
+import Header from "../components/Header.svelte";
+
 export interface Props {
   title: string;
 }
@@ -9,7 +13,7 @@ const mainTitle = "minotake";
 ---
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="font-zen font-medium">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -17,9 +21,11 @@ const mainTitle = "minotake";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-teal-50">
-    <Header mainTitle={mainTitle} />
-    <slot />
+  <body class="bg-slate-50 px-10">
+    <div class="max-w-5xl mx-auto">
+      <Header mainTitle={mainTitle} />
+      <slot />
+    </div>
     <style is:global></style>
   </body>
 </html>
