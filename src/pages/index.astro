@@ -1,9 +1,10 @@
 ---
-import HeadingPrimary from '../components/UI/HeadingPrimary.svelte';
 import Layout from '../layouts/Layout.astro';
+import ArticleList from '../components/ArticleList.svelte';
+import HeadingPrimary from '../components/UI/HeadingPrimary.svelte';
 
 import { getArticles, getWorks } from '../library/useCms';
-const articles = await getArticles();
+const articles = await getArticles(5);
 const works = await getWorks();
 ---
 
@@ -15,7 +16,11 @@ const works = await getWorks();
     </div>
 
     <div class="mt-28">
-      <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
+      <HeadingPrimary title={{ en: 'ARTICLES', ja: '記事' }} />
+    </div>
+
+    <div class="mt-10">
+      {articles && <ArticleList articles={articles} />}
     </div>
   </main>
 </Layout>

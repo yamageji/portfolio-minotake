@@ -1,11 +1,23 @@
 import { createClient, Content } from 'newt-client-js';
 
-interface Article extends Content {
+export interface Article extends Content {
   title: string;
-  content: string;
   date: string;
+  platform: 'chabatake' | 'zenn';
+  url: string;
+  'main-image'?: {
+    _id: string;
+    src: string;
+    fileType: string;
+    fileSize: number;
+    fileName: string;
+    width: number;
+    height: number;
+  };
+  content?: string;
 }
-interface Work extends Content {
+
+export interface Work extends Content {
   title: string;
   'main-image': {
     _id: string;
@@ -30,14 +42,15 @@ const client = createClient({
   apiType: 'cdn',
 });
 
-export const getArticles = async () => {
+export const getArticles = async (limit: number = 100) => {
   try {
     const articles = await client.getContents<Article>({
       appUid: 'portfolio',
-      modelUid: 'article',
+      modelUid: 'articles',
       query: {
-        '_sys.createdAt': { gt: '2021-09-01' },
         category: 'title',
+        limit: limit,
+        order: ['-date'],
       },
     });
     return articles.items;
