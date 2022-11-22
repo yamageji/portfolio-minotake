@@ -1,8 +1,8 @@
 ---
-import HeadingPrimary from "../components/UI/HeadingPrimary.svelte";
-import Layout from "../layouts/Layout.astro";
+import HeadingPrimary from '../components/UI/HeadingPrimary.svelte';
+import Layout from '../layouts/Layout.astro';
 
-import { getArticles, getWorks } from "../library/useCms";
+import { getArticles, getWorks } from '../library/useCms';
 const articles = await getArticles();
 const works = await getWorks();
 ---
@@ -15,35 +15,8 @@ const works = await getWorks();
     </div>
 
     <div class="mt-28">
-      <HeadingPrimary title={{en: 'WORKS', ja: '制作物'}} />
+      <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
     </div>
-    
-    <h1 class="text-2xl font-bold">Hello Astro</h1>
-    <ul>
-      {articles && articles.map((item) => (
-        <li>
-          <h2>{item.title}</h2>
-          <time>{item.date}</time>
-          <div set:html={item.content} />
-        </li>
-      ))}
-    </ul>
-    
-    <ul>
-      {works && works.map((work)=>(
-        <li>
-          <h2>{work.title}</h2>
-          <img src={work['main-image'].src} alt={work['main-image'].altText}>
-          <p>_id: {work['main-image']._id}</p>
-          <p>fileType: {work['main-image'].fileType}</p>
-          <p>fileName: {work['main-image'].fileName}</p>
-          <p>alt: {work['main-image'].altText}</p>
-          <p>description: {work['main-image'].description}</p>
-          <p>caption: {work['main-image'].metadata!.caption}</p>
-          <div set:html={work.content} />
-        </li>
-      ))}
-    </ul>
   </main>
 </Layout>
 

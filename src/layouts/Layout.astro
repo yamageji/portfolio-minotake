@@ -1,16 +1,16 @@
 ---
-import "@fontsource/zen-kaku-gothic-new";
-import "@fontsource/barlow-condensed";
+import '@fontsource/zen-kaku-gothic-new';
+import '@fontsource/barlow-condensed';
 
-import Header from "../components/Header.svelte";
-import PageLinks from "../components/PageLinks.svelte";
+import Header from '../components/Header.svelte';
+import PageLinks from '../components/PageLinks.svelte';
 
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-const mainTitle = "minotake";
+const mainTitle = 'minotake';
 ---
 
 <!DOCTYPE html>
@@ -25,14 +25,14 @@ const mainTitle = "minotake";
 
   <body class="bg-slate-50 px-10">
     <div class="max-w-5xl mx-auto gap-x-6 grid grid-cols-8">
-      <div class='col-span-8 sticky top-0'>
+      <div class="col-span-8 sticky top-0">
         <Header mainTitle={mainTitle} />
       </div>
 
-      <div class='col-span-2 mt-16'>
+      <div class="col-span-2 mt-16">
         <PageLinks />
       </div>
-      
+
       <div class="col-start-3 col-span-6 mt-16">
         <slot />
       </div>
