@@ -3,6 +3,7 @@ import "@fontsource/zen-kaku-gothic-new";
 import "@fontsource/barlow-condensed";
 
 import Header from "../components/Header.svelte";
+import PageLinks from "../components/PageLinks.svelte";
 
 export interface Props {
   title: string;
@@ -21,10 +22,20 @@ const mainTitle = "minotake";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+
   <body class="bg-slate-50 px-10">
-    <div class="max-w-5xl mx-auto">
-      <Header mainTitle={mainTitle} />
-      <slot />
+    <div class="max-w-5xl mx-auto gap-x-6 grid grid-cols-8">
+      <div class='col-span-8 sticky top-0'>
+        <Header mainTitle={mainTitle} />
+      </div>
+
+      <div class='col-span-2 mt-16'>
+        <PageLinks />
+      </div>
+      
+      <div class="col-start-3 col-span-6 mt-16">
+        <slot />
+      </div>
     </div>
     <style is:global></style>
   </body>
