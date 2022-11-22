@@ -1,13 +1,23 @@
 ---
+import HeadingPrimary from "../components/UI/HeadingPrimary.svelte";
 import Layout from "../layouts/Layout.astro";
 
-import { getArticles, getWorks } from "../library/cms";
+import { getArticles, getWorks } from "../library/useCms";
 const articles = await getArticles();
 const works = await getWorks();
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
+    <div class="flex gap-8 flex-col">
+      <div class="w-full h-[136px] bg-slate-400"></div>
+      <div class="w-full h-[136px] bg-slate-400"></div>
+    </div>
+
+    <div class="mt-28">
+      <HeadingPrimary title={{en: 'WORKS', ja: '制作物'}} />
+    </div>
+    
     <h1 class="text-2xl font-bold">Hello Astro</h1>
     <ul>
       {articles && articles.map((item) => (
