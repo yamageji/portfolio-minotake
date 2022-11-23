@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ArticleList from '../components/ArticleList.svelte';
 import HeadingPrimary from '../components/UI/HeadingPrimary.svelte';
+import LinkButton from '../components/UI/LinkButton.svelte';
 
 import { getArticles, getWorks } from '../library/useCms';
 const articles = await getArticles(5);
@@ -21,6 +22,7 @@ const works = await getWorks();
 
     <div class="mt-10">
       {articles && <ArticleList articles={articles} />}
+      <LinkButton>more</LinkButton>
     </div>
   </main>
 </Layout>

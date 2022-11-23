@@ -4,6 +4,7 @@ import '@fontsource/barlow-condensed';
 
 import Header from '../components/Header.svelte';
 import PageLinks from '../components/PageLinks.svelte';
+import Footer from '../components/Footer.svelte';
 
 export interface Props {
   title: string;
@@ -23,18 +24,22 @@ const mainTitle = 'minotake';
     <title>{title}</title>
   </head>
 
-  <body class="bg-slate-50 px-10">
+  <body class="bg-slate-50">
     <div class="max-w-5xl mx-auto gap-x-6 grid grid-cols-8">
       <div class="col-span-8 sticky top-0">
         <Header mainTitle={mainTitle} />
       </div>
 
-      <div class="col-span-2 mt-16">
+      <div class="col-span-2 mt-16 px-10">
         <PageLinks />
       </div>
 
       <div class="col-start-3 col-span-6 mt-16">
         <slot />
+      </div>
+
+      <div class="col-span-8 mt-16">
+        <Footer />
       </div>
     </div>
     <style is:global></style>
