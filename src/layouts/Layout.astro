@@ -25,8 +25,8 @@ const mainTitle = 'minotake';
   </head>
 
   <body class="bg-slate-50">
-    <div class="max-w-5xl mx-auto gap-x-6 grid grid-cols-8">
-      <div class="col-span-8 sticky top-0">
+    <div class="mx-auto grid max-w-5xl grid-cols-8 gap-x-6">
+      <div class="sticky top-0 col-span-8">
         <Header mainTitle={mainTitle} />
       </div>
 
@@ -34,7 +34,7 @@ const mainTitle = 'minotake';
         <PageLinks />
       </div>
 
-      <div class="col-start-3 col-span-6 mt-16">
+      <div class="col-span-6 col-start-3 mt-16">
         <slot />
       </div>
 

@@ -18,7 +18,7 @@
           {/if}
         </span>
         <span
-          class="decoration-slate-700 decoration-2 hover:underline underline-offset-4"
+          class="decoration-slate-700 decoration-2 underline-offset-4 hover:underline"
         >
           {article.title}
         </span>
