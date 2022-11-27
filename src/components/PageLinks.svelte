@@ -5,6 +5,10 @@
       href: '/',
     },
     {
+      label: 'ARTICLES',
+      href: '/articles',
+    },
+    {
       label: 'WORKS',
       href: '/works',
     },

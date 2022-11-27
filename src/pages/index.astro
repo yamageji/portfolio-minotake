@@ -22,7 +22,13 @@ const works = await getWorks();
 
     <div class="mt-10">
       {articles && <ArticleList articles={articles} />}
-      <LinkButton>more</LinkButton>
+      <div class="mt-10">
+        <LinkButton href="./articles">more</LinkButton>
+      </div>
+    </div>
+
+    <div class="mt-28">
+      <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
     </div>
   </main>
 </Layout>

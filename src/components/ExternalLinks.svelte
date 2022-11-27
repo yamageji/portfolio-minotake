@@ -1,5 +1,5 @@
 <script lant="ts">
-  import ArrowTopRightOnSquare from './icons/ArrowTopRightOnSquare.svelte';
+  import IconArrowTopRightOnSquare from './icons/IconArrowTopRightOnSquare.svelte';
   const externalLinks = [
     {
       label: 'GitHub',
@@ -18,7 +18,7 @@
       {#each externalLinks as link (link.label)}
         <li>
           <a class="flex items-center gap-1.5" href={link.href}
-            >{link.label}<ArrowTopRightOnSquare />
+            >{link.label}<IconArrowTopRightOnSquare />
           </a>
         </li>
       {/each}
