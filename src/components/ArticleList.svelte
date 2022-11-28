@@ -7,7 +7,7 @@
   export let articles: Article[];
 </script>
 
-<ul class="flex flex-col gap-6 text-2xl font-semibold leading-relaxed">
+<ul class="flex flex-col gap-6 text-xl font-semibold leading-relaxed">
   {#each articles as article (article._id)}
     <li>
       <a href={article.url} class="group flex gap-4">
