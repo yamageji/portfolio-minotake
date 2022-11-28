@@ -7,7 +7,7 @@ import LinkButton from '../components/UI/LinkButton.svelte';
 
 import { getArticles, getWorks } from '../library/useCms';
 const articles = await getArticles(5);
-// const works = await getWorks();
+const works = await getWorks();
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,9 +21,9 @@ const articles = await getArticles(5);
       <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
     </div>
     <div class="mt-10">
-      <WorkList />
+      {works && <WorkList works={works} />}
       <div class="mt-10">
-        <LinkButton href="./works">more</LinkButton>
+        <LinkButton href="./works">view more</LinkButton>
       </div>
     </div>
 
@@ -33,7 +33,7 @@ const articles = await getArticles(5);
     <div class="mt-10">
       {articles && <ArticleList articles={articles} />}
       <div class="mt-10">
-        <LinkButton href="./articles">more</LinkButton>
+        <LinkButton href="./articles">view more</LinkButton>
       </div>
     </div>
 
