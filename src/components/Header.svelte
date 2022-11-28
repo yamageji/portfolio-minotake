@@ -4,7 +4,7 @@
 </script>
 
 <header
-  class=" flex items-center justify-between bg-slate-50/30 px-10 backdrop-blur-md"
+  class="flex items-center justify-between bg-slate-50/30 px-10 backdrop-blur-md"
 >
   <h1
     class="font-barlow text-[44px] font-semibold tracking-widest text-slate-900"
