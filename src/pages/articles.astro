@@ -1,16 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ArticleList from '../components/ArticleList.svelte';
-import HeadingPrimary from '../components/UI/HeadingPrimary.svelte';
+import PageHeading from '../components/UI/PageHeading.svelte';
 
 import { getArticles } from '../library/useCms';
 const articles = await getArticles();
 ---
 
 <Layout title="article page">
-  <div class="">
-    <HeadingPrimary title={{ en: 'ARTICLES', ja: '記事' }} />
-  </div>
+  <PageHeading title={{ en: 'ARTICLES', ja: '記事' }} />
 
-  {articles && <ArticleList articles={articles} />}
+  <div class="mt-16">
+    {articles && <ArticleList articles={articles} />}
+  </div>
 </Layout>
