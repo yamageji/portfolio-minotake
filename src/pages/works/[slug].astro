@@ -1,0 +1,9 @@
+---
+export const getStaticPaths = () => {
+  return [{ params: { slug: 'markdown-meshi' } }];
+};
+
+const { slug } = Astro.params;
+---
+
+<div>{slug}</div>
