@@ -1,0 +1,26 @@
+---
+import Layout from '@layouts/Layout.astro';
+import ArticleList from '@components/ArticleList.svelte';
+import PageHeading from '@components/UI/PageHeading.svelte';
+import { getArticles } from '@library/useCms';
+
+export const getStaticPaths = async ({ paginate }) => {
+  const articles = await getArticles();
+  const articlePages = articles;
+  return paginate(articles, { pageSize: 5 });
+};
+const { page } = Astro.props;
+---
+
+<Layout title="article page">
+  <PageHeading title={{ en: 'ARTICLES', ja: '記事' }} />
+
+  <div class="mt-16">
+    <ArticleList articles={page.data} />
+  </div>
+
+  <div class="flex gap-2">
+    <a href="./1" class="rounded-full bg-slate-200 p-4">1</a>
+    <a href="./2" class="rounded-full bg-slate-200 p-4">2</a>
+  </div>
+</Layout>

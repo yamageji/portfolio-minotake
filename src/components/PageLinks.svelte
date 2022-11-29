@@ -10,7 +10,7 @@
     },
     {
       label: 'ARTICLES',
-      href: '/articles',
+      href: '/articles/1',
     },
     {
       label: 'PROFILE',

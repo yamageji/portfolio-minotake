@@ -11,7 +11,7 @@
   {#each articles as article (article._id)}
     <li>
       <a href={article.url} class="group flex gap-4">
-        <span class="mt-2 shrink-0">
+        <span class="mt-1 shrink-0">
           {#if article.platform === 'chabatake'}
             <IconChabatakeWeb />
           {:else if article.platform === 'zenn'}
