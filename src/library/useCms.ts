@@ -35,6 +35,7 @@ export interface Work extends Content {
       caption?: string;
     };
   };
+  link: string;
   content: string;
 }
 
