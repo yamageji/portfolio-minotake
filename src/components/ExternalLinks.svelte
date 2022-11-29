@@ -1,5 +1,6 @@
 <script lant="ts">
-  import IconArrowTopRightOnSquare from './icons/IconArrowTopRightOnSquare.svelte';
+  import IconArrowTopRightOnSquare from '@components/icons/IconArrowTopRightOnSquare.svelte';
+
   const externalLinks = [
     {
       label: 'GitHub',

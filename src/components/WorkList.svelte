@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Work } from '../library/useCms';
+  import type { Work } from '@library/useCms';
 
   export let works: Work[];
 </script>

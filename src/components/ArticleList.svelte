@@ -1,8 +1,8 @@
 <script type="ts">
-  import IconArrowUpRight from './icons/IconArrowUpRight.svelte';
-  import type { Article } from '../library/useCms';
-  import IcomZenn from './icons/IcomZenn.svelte';
-  import IconChabatakeWeb from './icons/IconChabatakeWeb.svelte';
+  import type { Article } from '@library/useCms';
+  import IconArrowUpRight from '@components/icons/IconArrowUpRight.svelte';
+  import IcomZenn from '@components/icons/IcomZenn.svelte';
+  import IconChabatakeWeb from '@components/icons/IconChabatakeWeb.svelte';
 
   export let articles: Article[];
 </script>

@@ -3,6 +3,7 @@
     en: string;
     ja: string;
   };
+
   export let title: Title;
 </script>
 

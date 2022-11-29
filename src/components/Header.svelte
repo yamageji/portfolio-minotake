@@ -1,5 +1,6 @@
 <script lang="ts">
-  import ExternalLinks from './ExternalLinks.svelte';
+  import ExternalLinks from '@components/ExternalLinks.svelte';
+
   export let mainTitle: string;
 </script>
 

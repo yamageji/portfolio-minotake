@@ -1,11 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import WorkList from '../components/WorkList.svelte';
-import ArticleList from '../components/ArticleList.svelte';
-import HeadingPrimary from '../components/UI/HeadingPrimary.svelte';
-import LinkButton from '../components/UI/LinkButton.svelte';
+import Layout from '@layouts/Layout.astro';
+import WorkList from '@components/WorkList.svelte';
+import ArticleList from '@components/ArticleList.svelte';
+import HeadingPrimary from '@components/UI/HeadingPrimary.svelte';
+import LinkButton from '@components/UI/LinkButton.svelte';
 
-import { getArticles, getWorks } from '../library/useCms';
+import { getArticles, getWorks } from '@library/useCms';
 const articles = await getArticles(5);
 const works = await getWorks(4);
 ---
@@ -13,8 +13,8 @@ const works = await getWorks(4);
 <Layout title="Welcome to Astro.">
   <main>
     <div class="flex flex-col gap-8">
-      <div class="h-[136px] w-full bg-slate-400"></div>
-      <div class="h-[136px] w-full bg-slate-400"></div>
+      <div class="h-[136px] w-full bg-slate-300"></div>
+      <div class="h-[136px] w-full bg-slate-300"></div>
     </div>
 
     <div class="mt-28">

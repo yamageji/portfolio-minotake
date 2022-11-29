@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MoveIconMore from '../icons/MoveIconMore.svelte';
+  import MoveIconMore from '@components/icons/MoveIconMore.svelte';
 
   export let href: string;
 </script>
