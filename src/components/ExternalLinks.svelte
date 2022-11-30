@@ -15,7 +15,7 @@
 
 <div>
   <nav>
-    <ul class="flex gap-6 font-barlow text-lg font-bold  tracking-wider">
+    <ul class="flex gap-6 font-barlow text-lg font-bold tracking-wider">
       {#each externalLinks as link (link.label)}
         <li>
           <a class="flex items-center gap-1.5" href={link.href}
