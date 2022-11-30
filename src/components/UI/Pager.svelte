@@ -4,18 +4,18 @@
   export let href: string;
 </script>
 
-{#if currentPage === page + 1}
+{#if currentPage === page}
   <a
     {href}
-    class="flex h-8 w-8 items-center justify-center rounded-md bg-teal-500 text-white duration-150 sm:h-10 sm:w-10"
+    class="flex h-8 w-8 items-center justify-center rounded-[4px] border border-teal-500 text-xl text-teal-500 duration-150"
   >
-    {page + 1}
+    {page}
   </a>
 {:else}
   <a
     {href}
-    class="flex h-8 w-8 items-center justify-center rounded-md text-slate-500 duration-150 hover:text-teal-500 sm:h-10 sm:w-10"
+    class="flex h-8 w-8 items-center justify-center rounded-[4px] text-xl text-slate-700 duration-150 hover:text-teal-500"
   >
-    {page + 1}
+    {page}
   </a>
 {/if}
