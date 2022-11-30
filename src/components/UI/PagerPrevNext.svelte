@@ -4,11 +4,7 @@
 </script>
 
 {#if type === 'prev'}
-  <a {href} class="mr-2 flex h-8 items-center justify-center rounded-md  ">
-    ＜ PREV
-  </a>
+  <a {href} class="mr-2 text-base tracking-wider text-slate-700"> ＜ PREV </a>
 {:else if type === 'next'}
-  <a {href} class="ml-2 flex h-8 items-center justify-center rounded-md ">
-    NEXT ＞
-  </a>
+  <a {href} class="ml-2 text-base tracking-wider text-slate-700"> NEXT ＞ </a>
 {/if}

@@ -13,7 +13,7 @@
 </script>
 
 <ul
-  class="flex items-center justify-center gap-1 font-barlow text-sm font-semibold tracking-wider sm:text-base"
+  class="flex items-center justify-center gap-1 font-barlow text-sm font-semibold"
 >
   {#if currentPage > 1}
     <li>
