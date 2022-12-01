@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         zen: ["'Zen Kaku Gothic New'", 'sans-serif'],
         barlow: ["'Barlow Condensed'", 'sans-serif'],
+        'barlow-semi': ["'Barlow Semi Condensed'", 'sans-serif'],
       },
       gridTemplateRows: {
         layout: 'auto minmax(auto, 1fr) auto',

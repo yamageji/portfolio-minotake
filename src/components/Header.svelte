@@ -8,7 +8,7 @@
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6">
     <a
       href="/"
-      class="font-barlow text-[44px] font-semibold tracking-widest text-slate-900"
+      class="font-barlow text-[44px] font-semibold tracking-wider text-slate-900"
     >
       {mainTitle}
     </a>

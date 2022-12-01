@@ -4,6 +4,7 @@ import WorkList from '@components/WorkList.svelte';
 import ArticleList from '@components/ArticleList.svelte';
 import HeadingPrimary from '@components/UI/HeadingPrimary.svelte';
 import LinkButton from '@components/UI/LinkButton.svelte';
+import Profile from '@components/Profile.svelte';
 
 import { getArticles, getWorks } from '@library/useCms';
 const articles = await getArticles(5);
@@ -39,6 +40,9 @@ const works = await getWorks(4);
 
     <div class="mt-28">
       <HeadingPrimary title={{ en: 'PROFILE', ja: '自己紹介' }} />
+      <div class="mt-10">
+        <Profile />
+      </div>
     </div>
   </main>
 </Layout>

@@ -14,7 +14,7 @@
 
 <nav>
   <ul
-    class="flex items-center justify-center gap-1 font-barlow text-sm font-semibold"
+    class="flex items-center justify-center gap-1 font-barlow-semi text-sm font-semibold"
   >
     {#if currentPage > 1}
       <li>

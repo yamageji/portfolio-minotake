@@ -21,7 +21,7 @@
             <ul class="mt-2 flex gap-2">
               {#each work.category as category}
                 <li
-                  class="rounded-md bg-slate-300 px-2 py-0.5 font-barlow text-sm font-semibold tracking-wider"
+                  class="rounded-md bg-slate-200 px-2 py-0.5 font-barlow-semi text-sm font-semibold tracking-wider"
                 >
                   {category}
                 </li>
