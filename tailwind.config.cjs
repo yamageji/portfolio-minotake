@@ -14,7 +14,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         layout:
-          'minmax(0, auto) 240px repeat(6, minmax(0, 107px)) minmax(0, auto)',
+          'minmax(0, auto) 232px repeat(6, minmax(0, 107px)) minmax(0, auto)',
       },
     },
     colors: {

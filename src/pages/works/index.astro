@@ -1,8 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import PageHeading from '@components/UI/PageHeading.svelte';
+import WorkList from '@components/WorkList.svelte';
+
+import { getWorks } from '@library/useCms';
+const works = await getWorks();
 ---
 
-<Layout title="works page">
+<Layout title="works page" currentPage="works">
   <PageHeading title={{ en: 'WORKS', ja: '制作物' }} />
+  <div class="mt-14">
+    {works && <WorkList works={works} />}
+  </div>
 </Layout>

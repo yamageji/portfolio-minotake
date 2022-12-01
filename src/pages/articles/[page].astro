@@ -13,10 +13,10 @@ export const getStaticPaths = async ({ paginate }: any) => {
 const { page } = Astro.props;
 ---
 
-<Layout title="article page">
+<Layout title="article page" currentPage="articles">
   <PageHeading title={{ en: 'ARTICLES', ja: '記事' }} />
 
-  <div class="mt-16">
+  <div class="mt-14">
     <ArticleList articles={page.data} />
   </div>
 

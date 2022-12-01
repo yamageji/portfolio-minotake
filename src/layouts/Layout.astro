@@ -8,9 +8,10 @@ import Footer from '@components/Footer.svelte';
 
 export interface Props {
   title: string;
+  currentPage: string;
 }
 
-const { title } = Astro.props;
+const { title, currentPage } = Astro.props;
 const mainTitle = 'minotake';
 ---
 
@@ -31,7 +32,7 @@ const mainTitle = 'minotake';
       </div>
 
       <div class="sticky top-[130px] col-span-1 col-start-2 my-16 h-60">
-        <PageLinks />
+        <PageLinks currentPage={currentPage} />
       </div>
 
       <div class="col-span-6 col-start-3 my-16">
