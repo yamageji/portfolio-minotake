@@ -7,7 +7,7 @@
   export let title: Title;
 </script>
 
-<h1 class="relative flex gap-10">
+<h1 class="relative -mt-1 flex gap-10">
   <span class="font-barlow text-5xl font-semibold tracking-widest text-teal-500"
     >{title.en}</span
   >

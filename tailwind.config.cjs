@@ -9,6 +9,12 @@ module.exports = {
         zen: ["'Zen Kaku Gothic New'", 'sans-serif'],
         barlow: ["'Barlow Condensed'", 'sans-serif'],
       },
+      gridTemplateRows: {
+        layout: 'auto minmax(auto, 1fr) auto',
+      },
+      gridTemplateColumns: {
+        layout: 'auto repeat(8, minmax(0, 1fr)) auto',
+      },
     },
     colors: {
       white: colors.white,

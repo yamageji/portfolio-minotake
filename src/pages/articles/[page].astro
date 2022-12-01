@@ -20,7 +20,7 @@ const { page } = Astro.props;
     <ArticleList articles={page.data} />
   </div>
 
-  <div class="mt-10 flex gap-2">
+  <div class="mt-14 flex gap-2">
     <Pagination currentPage={page.currentPage} totalPageCount={page.lastPage} />
   </div>
 </Layout>
