@@ -13,7 +13,8 @@ module.exports = {
         layout: 'auto minmax(auto, 1fr) auto',
       },
       gridTemplateColumns: {
-        layout: 'auto repeat(8, minmax(0, 1fr)) auto',
+        layout:
+          'minmax(0, auto) 240px repeat(6, minmax(0, 107px)) minmax(0, auto)',
       },
     },
     colors: {
