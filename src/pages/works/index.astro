@@ -2,14 +2,64 @@
 import Layout from '@layouts/Layout.astro';
 import PageHeading from '@components/UI/PageHeading.svelte';
 import WorkList from '@components/WorkList.svelte';
+import WorksTab from '@components/UI/WorksTab.svelte';
 
 import { getWorks } from '@library/useCms';
 const works = await getWorks();
+
+const tabList = [
+  {
+    id: 'All',
+    title: 'All',
+    content: [
+      {
+        url: 'content1',
+        title: 'content1',
+      },
+      {
+        url: 'content2',
+        title: 'content2',
+      },
+    ],
+  },
+  {
+    id: 'Design',
+    title: 'Design',
+    content: [
+      {
+        url: 'content1',
+        title: 'content1',
+      },
+      {
+        url: 'content2',
+        title: 'content2',
+      },
+    ],
+  },
+  {
+    id: 'Development',
+    title: 'Development',
+    content: [
+      {
+        url: 'content1',
+        title: 'content1',
+      },
+      {
+        url: 'content2',
+        title: 'content2',
+      },
+    ],
+  },
+];
 ---
 
 <Layout title="works page" currentPage="works">
   <PageHeading title={{ en: 'WORKS', ja: '制作物' }} />
+
   <div class="mt-14">
-    {works && <WorkList works={works} />}
+    <WorksTab data={tabList} client:load />
+    <div>
+      {works && <WorkList works={works} />}
+    </div>
   </div>
 </Layout>

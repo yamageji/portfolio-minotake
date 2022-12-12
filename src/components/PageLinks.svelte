@@ -3,7 +3,7 @@
 
   const pageLinks = [
     {
-      label: 'HOME',
+      label: 'ABOUT',
       href: '/',
     },
     {
@@ -13,10 +13,6 @@
     {
       label: 'ARTICLES',
       href: '/articles/1',
-    },
-    {
-      label: 'PROFILE',
-      href: '/profile',
     },
   ];
 </script>
