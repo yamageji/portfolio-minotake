@@ -1,54 +1,33 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import PageHeading from '@components/UI/PageHeading.svelte';
-import WorkList from '@components/WorkList.svelte';
 import WorksTab from '@components/UI/WorksTab.svelte';
-
 import { getWorks } from '@library/useCms';
+import type { Work } from '@library/useCms';
+
+type TabList = {
+  id: string;
+  title: string;
+  content: Work[] | undefined;
+};
+
 const works = await getWorks();
 
-const tabList = [
+const tabList: TabList[] = [
   {
     id: 'All',
     title: 'All',
-    content: [
-      {
-        url: 'content1',
-        title: 'content1',
-      },
-      {
-        url: 'content2',
-        title: 'content2',
-      },
-    ],
+    content: works,
   },
   {
     id: 'Design',
     title: 'Design',
-    content: [
-      {
-        url: 'content1',
-        title: 'content1',
-      },
-      {
-        url: 'content2',
-        title: 'content2',
-      },
-    ],
+    content: works,
   },
   {
     id: 'Development',
     title: 'Development',
-    content: [
-      {
-        url: 'content1',
-        title: 'content1',
-      },
-      {
-        url: 'content2',
-        title: 'content2',
-      },
-    ],
+    content: [],
   },
 ];
 ---
@@ -58,8 +37,5 @@ const tabList = [
 
   <div class="mt-14">
     <WorksTab data={tabList} client:load />
-    <div>
-      {works && <WorkList works={works} />}
-    </div>
   </div>
 </Layout>
