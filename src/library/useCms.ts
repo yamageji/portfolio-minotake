@@ -96,7 +96,7 @@ export const getWorksByCategory = async (
     });
     return works.items;
   } catch (err) {
-    console.log('~~ getWorks ~~');
+    console.log('~~ getWorksByCategory ~~');
     console.log(err);
   }
 };
