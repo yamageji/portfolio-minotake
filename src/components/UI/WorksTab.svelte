@@ -65,8 +65,8 @@
 <div class="w-full">
   <ul
     role="tablist"
-    aria-label="works category link"
-    class="flex gap-6 border-b-2 border-slate-300 font-barlow-semi text-3xl font-semibold text-slate-400"
+    aria-label="works category"
+    class="flex gap-4 border-b-2 border-slate-300 font-barlow-semi text-2xl font-semibold text-slate-400"
   >
     {#each data as { id, title }, index}
       {@const currentActive = activeIndex === index}
@@ -92,14 +92,15 @@
     {/each}
   </ul>
   <div class="mt-10 w-full">
-    {#each data as { id, title, content }, index}
+    {#each data as { id, content }, index}
       {@const currentActive = activeIndex === index}
+      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <div
         id="panel-{id}"
         role="tabpanel"
+        tabindex="0"
         aria-hidden={currentActive ? 'false' : 'true'}
         aria-labelledby="tab-{id}"
-        tabindex="0"
         class="aria-hidden:hidden"
       >
         {#if content && content.length !== 0}
