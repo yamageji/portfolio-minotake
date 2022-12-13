@@ -84,7 +84,7 @@
           aria-selected={currentActive ? 'true' : 'false'}
           tabindex={currentActive ? 0 : -1}
           on:click={onClick}
-          class="relative block px-2 py-2 tracking-wider hover:text-slate-900 focus:text-slate-900 aria-selected:border-b-2 aria-selected:border-teal-500 aria-selected:text-slate-900"
+          class="relative block px-2 py-2 tracking-wider duration-150 hover:text-slate-900 focus:text-slate-900 aria-selected:border-b-2 aria-selected:border-teal-500 aria-selected:text-slate-900"
         >
           {title}
         </button>
