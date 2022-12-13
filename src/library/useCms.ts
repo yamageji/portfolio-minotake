@@ -63,12 +63,33 @@ export const getArticles = async (limit: number = 100) => {
   }
 };
 
-export const getWorks = async (limit: number = 100) => {
+export const getAllWorks = async (limit: number = 100) => {
   try {
     const works = await client.getContents<Work>({
       appUid: 'portfolio',
       modelUid: 'works',
       query: {
+        limit: limit,
+        order: ['-date'],
+      },
+    });
+    return works.items;
+  } catch (err) {
+    console.log('~~ getWorks ~~');
+    console.log(err);
+  }
+};
+
+export const getWorksByCategory = async (
+  category: string,
+  limit: number = 100
+) => {
+  try {
+    const works = await client.getContents<Work>({
+      appUid: 'portfolio',
+      modelUid: 'works',
+      query: {
+        category: category,
         limit: limit,
         order: ['-date'],
       },

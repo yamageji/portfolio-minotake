@@ -2,7 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import PageHeading from '@components/UI/PageHeading.svelte';
 import WorksTab from '@components/UI/WorksTab.svelte';
-import { getWorks } from '@library/useCms';
+import { getAllWorks, getWorksByCategory } from '@library/useCms';
 import type { Work } from '@library/useCms';
 
 type TabList = {
@@ -11,23 +11,25 @@ type TabList = {
   content: Work[] | undefined;
 };
 
-const works = await getWorks();
+const allWorks = await getAllWorks();
+const designs = await getWorksByCategory('design');
+const development = await getWorksByCategory('development');
 
 const tabList: TabList[] = [
   {
     id: 'All',
     title: 'All',
-    content: works,
+    content: allWorks,
   },
   {
     id: 'Design',
     title: 'Design',
-    content: works,
+    content: designs,
   },
   {
     id: 'Development',
     title: 'Development',
-    content: [],
+    content: development,
   },
 ];
 ---

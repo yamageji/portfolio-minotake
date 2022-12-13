@@ -32,7 +32,7 @@
             </li>
           {:else}
             <li
-              class="flex items-center gap-4 text-slate-700 before:block before:h-2 before:w-10 before:shrink-0 before:rounded-full before:bg-slate-400"
+              class="flex items-center gap-4 text-slate-600 duration-150 before:block before:h-2 before:w-10 before:shrink-0 before:rounded-full before:bg-slate-400 hover:text-slate-900"
             >
               <a href={link.href}>{link.label}</a>
             </li>

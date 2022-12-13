@@ -66,7 +66,7 @@
   <ul
     role="tablist"
     aria-label="works category"
-    class="flex gap-4 border-b-2 border-slate-300 font-barlow-semi text-2xl font-semibold text-slate-400"
+    class="flex gap-4 border-b-2 border-slate-300 font-barlow-semi text-2xl font-semibold text-slate-600"
   >
     {#each data as { id, title }, index}
       {@const currentActive = activeIndex === index}

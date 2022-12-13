@@ -6,9 +6,9 @@ import HeadingPrimary from '@components/UI/HeadingPrimary.svelte';
 import LinkButton from '@components/UI/LinkButton.svelte';
 import Profile from '@components/Profile.svelte';
 
-import { getArticles, getWorks } from '@library/useCms';
+import { getArticles, getAllWorks } from '@library/useCms';
 const articles = await getArticles(5);
-const works = await getWorks(4);
+const works = await getAllWorks(4);
 ---
 
 <Layout title="minotake" currentPage="about">
