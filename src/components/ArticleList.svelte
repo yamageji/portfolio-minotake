@@ -7,11 +7,13 @@
   export let articles: Article[];
 </script>
 
-<ul class="flex flex-col gap-6 text-xl font-semibold leading-relaxed">
+<ul
+  class="flex flex-col gap-4 text-lg font-semibold leading-relaxed md:gap-6 md:text-xl"
+>
   {#each articles as article (article._id)}
     <li>
-      <a href={article.url} class="group flex gap-4">
-        <span class="mt-1 shrink-0">
+      <a href={article.url} class="group flex gap-3 md:gap-4">
+        <span class="mt-1.5 shrink-0 md:mt-1">
           {#if article.platform === 'chabatake'}
             <IconChabatakeWeb />
           {:else if article.platform === 'zenn'}
@@ -20,7 +22,7 @@
         </span>
         <span class="inline">
           <span
-            class="mr-2 decoration-slate-700 decoration-2 underline-offset-4 group-hover:underline"
+            class="mr-1.5 decoration-slate-700 decoration-2 underline-offset-4 group-hover:underline md:mr-2"
           >
             {article.title}
           </span>

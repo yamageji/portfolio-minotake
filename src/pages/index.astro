@@ -18,31 +18,31 @@ const works = await getAllWorks(4);
       <div class="h-[136px] w-full bg-slate-300"></div>
     </div>
 
-    <div class="mt-28">
+    <div class="mt-20 md:mt-28">
       <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
     </div>
-    <div class="mt-10">
+    <div class="mt-8 md:mt-10">
       {works && <WorkList works={works} />}
-      <div class="mt-10">
+      <div class="mt-8 md:mt-10">
         <LinkButton href="./works">view more works</LinkButton>
       </div>
     </div>
 
-    <div class="mt-28">
+    <div class="mt-20 md:mt-28">
       <HeadingPrimary title={{ en: 'ARTICLES', ja: '記事' }} />
     </div>
-    <div class="mt-10">
+    <div class="mt-8 md:mt-10">
       {articles && <ArticleList articles={articles} />}
-      <div class="mt-10">
+      <div class="mt-8 md:mt-10">
         <LinkButton href="./articles/1">view more articles</LinkButton>
       </div>
     </div>
 
-    <div class="mt-28">
+    <div class="mt-20 md:mt-28">
       <HeadingPrimary title={{ en: 'PROFILE', ja: '自己紹介' }} />
-      <div class="mt-10">
+      <div class="mt-8 md:mt-10">
         <Profile />
-        <div class="mt-10">
+        <div class="mt-8 md:mt-10">
           <LinkButton href="./profile">view more profile</LinkButton>
         </div>
       </div>
