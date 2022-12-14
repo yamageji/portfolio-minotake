@@ -6,8 +6,8 @@
 
 <a
   {href}
-  class="group inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-slate-500 pt-1 pr-6 pb-1
-pl-6 font-barlow-semi text-2xl font-semibold text-slate-700 duration-200 hover:bg-slate-100"
+  class="group inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-slate-500 pt-1 pr-5 pb-1
+pl-5 font-barlow-semi text-xl font-semibold text-slate-700 duration-200 hover:bg-slate-100"
 >
   <span class="mb-0.5 tracking-wider">
     <slot />

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IconChevronRighe from '@components/icons/IconChevronRighe.svelte';
+  import IconChevronRight from '@components/icons/IconChevronRight.svelte';
   import IconChevronLeft from '@components/icons/IconChevronLeft.svelte';
 
   export let type: 'prev' | 'next';
@@ -23,7 +23,7 @@
   >
     <span class="duration-150 group-hover:text-teal-500"> NEXT </span>
     <span class="duration-150 group-hover:text-teal-500">
-      <IconChevronRighe />
+      <IconChevronRight />
     </span>
   </a>
 {/if}

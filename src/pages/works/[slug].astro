@@ -1,9 +1,16 @@
 ---
+import Layout from '@layouts/Layout.astro';
+import { getWork, getAllWorks } from '@library/useCms';
+
 export const getStaticPaths = () => {
   return [{ params: { slug: 'markdown-meshi' } }];
 };
 
 const { slug } = Astro.params;
+const work = slug && (await getWork(slug));
+const works = getAllWorks();
 ---
 
-<div>{slug}</div>
+<Layout title="work page" currentPage="works">
+  {work && <div>{work.title}</div>}
+</Layout>

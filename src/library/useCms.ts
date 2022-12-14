@@ -19,6 +19,7 @@ export interface Article extends Content {
 
 export interface Work extends Content {
   title: string;
+  slug: string;
   data: string;
   category: ['web' | 'design'];
   'main-image': {
@@ -59,6 +60,23 @@ export const getArticles = async (limit: number = 100) => {
     return articles.items;
   } catch (err) {
     console.log('~~ getArticles ~~');
+    console.log(err);
+  }
+};
+
+export const getWork = async (slug: string | number) => {
+  try {
+    const work = await client.getFirstContent<Work>({
+      appUid: 'portfolio',
+      modelUid: 'works',
+      query: {
+        slug: slug,
+      },
+    });
+    console.log(work);
+    return work;
+  } catch (err) {
+    console.log('~~ getWork ~~');
     console.log(err);
   }
 };
