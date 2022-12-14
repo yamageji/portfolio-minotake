@@ -27,20 +27,24 @@ const mainTitle = 'minotake';
   </head>
 
   <body class="bg-slate-50">
-    <div class="grid min-h-screen grid-cols-layout grid-rows-layout gap-x-6">
-      <div class="sticky top-0 z-10 col-span-9">
+    <div
+      class="grid min-h-screen grid-cols-layout-md grid-rows-layout-md gap-x-6 md:grid-cols-layout-lg md:grid-rows-layout-lg"
+    >
+      <div class="sticky top-0 z-10 col-span-3 col-start-1 md:col-span-9">
         <Header mainTitle={mainTitle} />
       </div>
 
-      <div class="sticky top-[130px] col-span-1 col-start-2 my-16 h-60">
+      <div
+        class="sticky top-[130px] my-16 hidden h-60 md:col-span-1 md:col-start-2 md:block"
+      >
         <PageLinks currentPage={currentPage} />
       </div>
 
-      <div class="col-span-6 col-start-3 my-16">
+      <div class="col-span-1 col-start-2 my-16 md:col-span-6 md:col-start-3">
         <slot />
       </div>
 
-      <div class="col-span-9 mt-16">
+      <div class="col-span-3 col-start-1 mt-16 md:col-span-9">
         <Footer />
       </div>
     </div>

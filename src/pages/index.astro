@@ -24,7 +24,7 @@ const works = await getAllWorks(4);
     <div class="mt-10">
       {works && <WorkList works={works} />}
       <div class="mt-10">
-        <LinkButton href="./works">view more</LinkButton>
+        <LinkButton href="./works">view more works</LinkButton>
       </div>
     </div>
 
@@ -34,7 +34,7 @@ const works = await getAllWorks(4);
     <div class="mt-10">
       {articles && <ArticleList articles={articles} />}
       <div class="mt-10">
-        <LinkButton href="./articles/1">view more</LinkButton>
+        <LinkButton href="./articles/1">view more articles</LinkButton>
       </div>
     </div>
 
@@ -42,9 +42,10 @@ const works = await getAllWorks(4);
       <HeadingPrimary title={{ en: 'PROFILE', ja: '自己紹介' }} />
       <div class="mt-10">
         <Profile />
+        <div class="mt-10">
+          <LinkButton href="./profile">view more profile</LinkButton>
+        </div>
       </div>
     </div>
   </main>
 </Layout>
-
-<style></style>

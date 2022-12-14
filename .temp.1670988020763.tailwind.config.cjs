@@ -11,13 +11,14 @@ module.exports = {
         'barlow-semi': ["'Barlow Semi Condensed'", 'sans-serif'],
       },
       gridTemplateRows: {
-        'layout-md': 'auto minmax(auto, 1fr) auto',
-        'layout-lg': 'auto minmax(auto, 1fr) auto',
+        layout: 'auto minmax(auto, 1fr) auto',
       },
       gridTemplateColumns: {
-        'layout-md': 'minmax(0, auto) 1fr minmax(0, auto)',
-        'layout-lg':
-          'minmax(8px, auto) 248px repeat(6, minmax(0, 107px)) minmax(8px, auto)',
+        'layout-md':
+          'minmax(0, auto) 256px repeat(6, minmax(0, 107px)) minmax(0, auto)',
+      },
+        'layout-md':
+          'minmax(0, auto) 256px repeat(6, minmax(0, 107px)) minmax(0, auto)',
       },
     },
     colors: {
@@ -27,5 +28,5 @@ module.exports = {
       amber: colors.amber,
     },
   },
-  plugins: [require('@tailwindcss/container-queries')],
+  plugins: [],
 };

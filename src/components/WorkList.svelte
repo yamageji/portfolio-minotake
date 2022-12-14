@@ -4,12 +4,12 @@
   export let works: Work[];
 </script>
 
-<ul class="grid grid-cols-2 gap-x-6 gap-y-8">
-  {#each works as work (work._id)}
-    <li>
-      {#if work.link}
-        <a href={work.link}>
-          <div>
+<div class="@container">
+  <ul class="grid grid-cols-1 gap-x-6 gap-y-10 @[528px]:grid-cols-2">
+    {#each works as work (work._id)}
+      <li>
+        {#if work.link}
+          <a href={work.link}>
             <img
               src={work['main-image'].src}
               alt={work['main-image'].altText}
@@ -27,9 +27,9 @@
                 </li>
               {/each}
             </ul>
-          </div>
-        </a>
-      {/if}
-    </li>
-  {/each}
-</ul>
+          </a>
+        {/if}
+      </li>
+    {/each}
+  </ul>
+</div>
