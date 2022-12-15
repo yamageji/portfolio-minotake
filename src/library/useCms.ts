@@ -20,7 +20,7 @@ export interface Article extends Content {
 export interface Work extends Content {
   title: string;
   slug: string;
-  data: string;
+  date: string;
   category: ['web' | 'design'];
   'main-image': {
     _id: string;

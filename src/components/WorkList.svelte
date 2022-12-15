@@ -9,7 +9,7 @@
     {#each works as work (work._id)}
       <li>
         {#if work.link}
-          <a href={work.link}>
+          <a href={`/works/${work.slug}`}>
             <img
               src={work['main-image'].src}
               alt={work['main-image'].altText}

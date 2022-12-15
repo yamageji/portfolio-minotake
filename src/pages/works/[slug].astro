@@ -2,15 +2,47 @@
 import Layout from '@layouts/Layout.astro';
 import { getWork, getAllWorks } from '@library/useCms';
 
-export const getStaticPaths = () => {
-  return [{ params: { slug: 'markdown-meshi' } }];
+export const getStaticPaths = async () => {
+  const works = await getAllWorks();
+  if (!works) return;
+  return works.map((content) => ({
+    params: {
+      slug: content.slug,
+    },
+  }));
 };
 
 const { slug } = Astro.params;
 const work = slug && (await getWork(slug));
-const works = getAllWorks();
 ---
 
 <Layout title="work page" currentPage="works">
-  {work && <div>{work.title}</div>}
+  {
+    work && (
+      <div class="">
+        <h1 class="text-5xl font-bold text-teal-500">{work.title}</h1>
+
+        <div class="flex justify-between">
+          <div class="mt-10 flex gap-6">
+            <div class="font-barlow-semi">
+              <p class="text-2xl font-semibold">date</p>
+              <div class="">{work.date}</div>
+            </div>
+            <div class="font-barlow-semi">
+              <p class="text-2xl font-semibold">category</p>
+              <ul class="flex gap-4">
+                {work.category.map((item) => {
+                  return <li>{item}</li>;
+                })}
+              </ul>
+            </div>
+          </div>
+
+          <div class="self-end">
+            <a href={work.link}>visit site</a>
+          </div>
+        </div>
+      </div>
+    )
+  }
 </Layout>
