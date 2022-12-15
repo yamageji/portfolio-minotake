@@ -8,7 +8,7 @@
 </script>
 
 <ul
-  class="flex flex-col gap-4 text-lg font-semibold leading-relaxed md:gap-6 md:text-xl"
+  class="flex flex-col gap-4 text-lg font-bold leading-relaxed md:gap-6 md:text-xl"
 >
   {#each articles as article (article._id)}
     <li>

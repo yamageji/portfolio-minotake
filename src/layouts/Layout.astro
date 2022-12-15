@@ -1,7 +1,8 @@
 ---
-import '@fontsource/zen-kaku-gothic-new';
-import '@fontsource/barlow-condensed';
-import '@fontsource/barlow-semi-condensed';
+import '@fontsource/zen-kaku-gothic-new/500.css';
+import '@fontsource/zen-kaku-gothic-new/700.css';
+import '@fontsource/barlow-condensed/600.css';
+import '@fontsource/barlow-semi-condensed/600.css';
 
 import Header from '@components/Header.svelte';
 import PageLinks from '@components/PageLinks.svelte';
@@ -40,7 +41,9 @@ const mainTitle = 'minotake';
         <PageLinks currentPage={currentPage} />
       </div>
 
-      <div class="col-span-1 col-start-2 my-16 md:col-span-6 md:col-start-3">
+      <div
+        class="col-span-1 col-start-2 my-12 md:col-span-6 md:col-start-3 md:my-16"
+      >
         <slot />
       </div>
 

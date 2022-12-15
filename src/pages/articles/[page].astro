@@ -16,7 +16,7 @@ const { page } = Astro.props;
 <Layout title="article page" currentPage="articles">
   <PageHeading title={{ en: 'ARTICLES', ja: '記事' }} />
 
-  <div class="mt-14">
+  <div class="mt-8 md:mt-14">
     <ArticleList articles={page.data} />
   </div>
 
