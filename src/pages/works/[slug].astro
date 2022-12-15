@@ -1,6 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { getWork, getAllWorks } from '@library/useCms';
+import { convertDate } from '@library/convertDate';
+import LinkButton from '@components/UI/LinkButton.svelte';
 
 export const getStaticPaths = async () => {
   const works = await getAllWorks();
@@ -20,26 +22,33 @@ const work = slug && (await getWork(slug));
   {
     work && (
       <div class="">
-        <h1 class="text-5xl font-bold text-teal-500">{work.title}</h1>
+        <h1 class="text-4xl font-bold text-teal-500">{work.title}</h1>
 
-        <div class="flex justify-between">
-          <div class="mt-10 flex gap-6">
-            <div class="font-barlow-semi">
+        <div class="mt-20 flex justify-between">
+          <div class="flex gap-10">
+            <div class="font-barlow-semi flex flex-col gap-1">
               <p class="text-2xl font-semibold">date</p>
-              <div class="">{work.date}</div>
+              <div class="text-md rounded-md bg-slate-200 py-0.5 px-2 tracking-wide">
+                {convertDate(work.date).monthYear}
+              </div>
             </div>
-            <div class="font-barlow-semi">
+
+            <div class="font-barlow-semi flex flex-col gap-1">
               <p class="text-2xl font-semibold">category</p>
-              <ul class="flex gap-4">
+              <ul class=" flex gap-2 ">
                 {work.category.map((item) => {
-                  return <li>{item}</li>;
+                  return (
+                    <li class="text-md rounded-md bg-slate-200 py-0.5 px-2 tracking-wide">
+                      {item}
+                    </li>
+                  );
                 })}
               </ul>
             </div>
           </div>
 
           <div class="self-end">
-            <a href={work.link}>visit site</a>
+            <LinkButton href={work.link}>visit site</LinkButton>
           </div>
         </div>
       </div>

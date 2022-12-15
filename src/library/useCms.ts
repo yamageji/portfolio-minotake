@@ -73,7 +73,6 @@ export const getWork = async (slug: string | number) => {
         slug: slug,
       },
     });
-    console.log(work);
     return work;
   } catch (err) {
     console.log('~~ getWork ~~');
