@@ -22,19 +22,23 @@ const work = slug && (await getWork(slug));
   {
     work && (
       <div class="">
-        <h1 class="text-4xl font-bold text-teal-500">{work.title}</h1>
+        <h1 class="text-[40px] font-bold text-teal-500">{work.title}</h1>
 
-        <div class="mt-20 flex justify-between">
+        <div class="mt-12 flex justify-between pl-4">
           <div class="flex gap-10">
-            <div class="font-barlow-semi flex flex-col gap-1">
-              <p class="text-2xl font-semibold">date</p>
+            <div class="font-barlow-semi flex flex-col gap-2 font-semibold">
+              <p class="relative text-2xl tracking-wide text-slate-800 before:absolute before:-left-3.5 before:top-3.5 before:block before:h-2 before:w-2 before:rounded-full before:bg-slate-400">
+                date
+              </p>
               <div class="text-md rounded-md bg-slate-200 py-0.5 px-2 tracking-wide">
                 {convertDate(work.date).monthYear}
               </div>
             </div>
 
-            <div class="font-barlow-semi flex flex-col gap-1">
-              <p class="text-2xl font-semibold">category</p>
+            <div class="font-barlow-semi flex flex-col gap-2 font-semibold">
+              <p class="relative text-2xl tracking-wide text-slate-800 before:absolute before:-left-3.5 before:top-3.5 before:block before:h-2 before:w-2 before:rounded-full before:bg-slate-400">
+                category
+              </p>
               <ul class=" flex gap-2 ">
                 {work.category.map((item) => {
                   return (
@@ -51,6 +55,17 @@ const work = slug && (await getWork(slug));
             <LinkButton href={work.link}>visit site</LinkButton>
           </div>
         </div>
+
+        <div class="mt-20">
+          <div class="h-64 w-full rounded-md bg-slate-300" />
+          <div class="mt-4 flex gap-4">
+            <div class="h-64 w-full rounded-md bg-slate-300" />
+            <div class="h-64 w-full rounded-md bg-slate-300" />
+          </div>
+        </div>
+        <p class="mt-10">
+          ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー
+        </p>
       </div>
     )
   }
