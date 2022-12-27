@@ -1,5 +1,6 @@
 <script lang="ts">
   import ExternalLinks from '@components/ExternalLinks.svelte';
+  import NavigationMenu from './UI/NavigationMenu.svelte';
 
   export let mainTitle: string;
 </script>
@@ -12,6 +13,11 @@
     >
       {mainTitle}
     </a>
-    <ExternalLinks />
+    <div class="hidden md:block">
+      <ExternalLinks />
+    </div>
+    <div class="relative w-fit md:hidden">
+      <NavigationMenu />
+    </div>
   </div>
 </header>
