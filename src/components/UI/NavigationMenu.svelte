@@ -1,10 +1,15 @@
 <script lang="ts">
+  import IconBars from '@components/icons/IconBars.svelte';
+  import IconClose from '@components/icons/IconClose.svelte';
+  import IconEllipsisVertical from '@components/icons/IconEllipsisVertical.svelte';
   import {
-    Menu,
-    MenuButton,
-    MenuItems,
-    MenuItem,
+    Dialog,
+    DialogOverlay,
+    DialogTitle,
+    DialogDescription,
   } from '@rgossiaux/svelte-headlessui';
+
+  let isOpen = false;
 
   const pageLinks = [
     {
@@ -26,22 +31,43 @@
   ];
 </script>
 
-<div class="absolute -top-3 right-0">
-  <Menu let:open class="relative inline-block text-left">
-    <MenuButton
-      class="inline-flex w-full justify-center rounded-md bg-slate-700 bg-opacity-70 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-      >{open ? 'CLOSE' : 'MENU'}</MenuButton
-    >
-    <MenuItems
-      class="divide-gray-100 ring-black absolute right-0 mt-2 flex w-56 origin-top-right flex-col gap-2 divide-y rounded-md bg-white shadow-lg ring-1 ring-opacity-5 focus:outline-none"
-    >
-      {#each pageLinks as pageLink (pageLink.label)}
-        <MenuItem let:active>
-          <a href={pageLink.href} class={`${active ? 'active' : 'inactive'}`}
-            >{pageLink.label}</a
-          >
-        </MenuItem>
-      {/each}
-    </MenuItems>
-  </Menu>
+<div class="fixed top-3 right-6 flex items-center justify-center">
+  <button
+    type="button"
+    on:click={() => (isOpen = true)}
+    class="rounded-md px-2 py-2 text-sm text-slate-600 hover:text-slate-800"
+  >
+    <IconBars />
+  </button>
 </div>
+
+<Dialog open={isOpen} on:close={() => (isOpen = false)} class="relative z-20">
+  <DialogOverlay class="fixed inset-0 bg-slate-800/20 backdrop-blur-sm" />
+
+  <div
+    class="fixed top-4 right-4 overflow-y-auto rounded-md bg-slate-50 shadow-md"
+  >
+    <div
+      class="flex min-h-full flex-row-reverse place-items-start gap-20 py-6 pr-6 pl-10"
+    >
+      <button
+        type="button"
+        on:click={() => (isOpen = false)}
+        class=" -mx-2 -my-2 px-2 py-2"
+      >
+        <IconClose />
+      </button>
+      <ul
+        class="flex flex-col gap-3 font-barlow-semi text-xl font-semibold tracking-wider"
+      >
+        {#each pageLinks as pageLink (pageLink.label)}
+          <li>
+            <a href={pageLink.href}>
+              {pageLink.label}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+  </div>
+</Dialog>

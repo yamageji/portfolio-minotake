@@ -1,14 +1,14 @@
 <script type="ts">
   import type { Article } from '@library/useCms';
   import IconArrowUpRight from '@components/icons/IconArrowUpRight.svelte';
-  import IcomZenn from '@components/icons/IcomZenn.svelte';
+  import IconZenn from '@components/icons/IconZenn.svelte';
   import IconChabatakeWeb from '@components/icons/IconChabatakeWeb.svelte';
 
   export let articles: Article[];
 </script>
 
 <ul
-  class="flex flex-col gap-4 text-lg font-bold leading-relaxed md:gap-6 md:text-xl"
+  class="flex	 flex-col gap-4 text-lg font-bold leading-normal md:gap-6 md:text-xl md:leading-relaxed"
 >
   {#each articles as article (article._id)}
     <li>
@@ -17,7 +17,7 @@
           {#if article.platform === 'chabatake'}
             <IconChabatakeWeb />
           {:else if article.platform === 'zenn'}
-            <IcomZenn />
+            <IconZenn />
           {/if}
         </span>
         <span class="inline">

@@ -16,7 +16,7 @@
     <div class="hidden md:block">
       <ExternalLinks />
     </div>
-    <div class="relative w-fit md:hidden">
+    <div class="md:hidden">
       <NavigationMenu />
     </div>
   </div>
