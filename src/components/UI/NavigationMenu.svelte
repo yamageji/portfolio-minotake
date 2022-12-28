@@ -1,7 +1,6 @@
 <script lang="ts">
   import IconBars from '@components/icons/IconBars.svelte';
   import IconClose from '@components/icons/IconClose.svelte';
-  import IconEllipsisVertical from '@components/icons/IconEllipsisVertical.svelte';
   import {
     Dialog,
     DialogOverlay,
