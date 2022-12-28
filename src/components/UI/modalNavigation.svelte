@@ -46,29 +46,28 @@
     </button>
   </div>
 
-  <dialog bind:this={dialog}>
+  <dialog
+    bind:this={dialog}
+    class="fixed top-4 right-4 overflow-y-auto rounded-md bg-slate-50 shadow-md backdrop:bg-slate-900/20 backdrop:backdrop-blur-sm open:inline-block"
+  >
     <div
-      class="fixed top-4 right-4 overflow-y-auto rounded-md bg-slate-50 shadow-md"
+      class="flex min-h-full flex-row-reverse place-items-start gap-20 py-6 pr-6 pl-10"
     >
-      <div
-        class="flex min-h-full flex-row-reverse place-items-start gap-20 py-6 pr-6 pl-10"
-      >
-        <button on:click={closeDialog}>
-          <IconClose />
-        </button>
+      <button on:click={closeDialog}>
+        <IconClose />
+      </button>
 
-        <ul
-          class="flex flex-col gap-3 font-barlow-semi text-xl font-semibold tracking-wider"
-        >
-          {#each pageLinks as pageLink (pageLink.label)}
-            <li>
-              <a href={pageLink.href}>
-                {pageLink.label}
-              </a>
-            </li>
-          {/each}
-        </ul>
-      </div>
+      <ul
+        class="flex flex-col gap-3 font-barlow-semi text-xl font-semibold tracking-wider"
+      >
+        {#each pageLinks as pageLink (pageLink.label)}
+          <li>
+            <a href={pageLink.href}>
+              {pageLink.label}
+            </a>
+          </li>
+        {/each}
+      </ul>
     </div>
   </dialog>
 </div>
