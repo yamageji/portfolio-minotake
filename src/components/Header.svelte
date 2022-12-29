@@ -1,6 +1,5 @@
 <script lang="ts">
   import ExternalLinks from '@components/ExternalLinks.svelte';
-  import ModalNavigation from './UI/modalNavigation.svelte';
   import NavigationMenu from './UI/NavigationMenu.svelte';
 
   export let mainTitle: string;
@@ -18,8 +17,7 @@
       <ExternalLinks />
     </div>
     <div class="md:hidden">
-      <!-- <NavigationMenu /> -->
-      <ModalNavigation />
+      <NavigationMenu />
     </div>
   </div>
 </header>

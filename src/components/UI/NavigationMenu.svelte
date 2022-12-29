@@ -1,14 +1,8 @@
 <script lang="ts">
+  import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+
   import IconBars from '@components/icons/IconBars.svelte';
   import IconClose from '@components/icons/IconClose.svelte';
-  import {
-    Dialog,
-    DialogOverlay,
-    DialogTitle,
-    DialogDescription,
-  } from '@rgossiaux/svelte-headlessui';
-
-  let isOpen = false;
 
   const pageLinks = [
     {
@@ -28,34 +22,58 @@
       href: '/profile',
     },
   ];
+  const externalLinks = [
+    {
+      label: 'GitHub',
+      href: 'https://github.com/K-shigehito',
+    },
+    {
+      label: 'Twitter',
+      href: 'https://twitter.com/chabatake5',
+    },
+  ];
+
+  let dialog: HTMLDialogElement;
+
+  const showDialog = () => {
+    dialog.showModal();
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) {
+        dialog.close();
+        clearAllBodyScrollLocks();
+      }
+    });
+    disableBodyScroll(document.body);
+  };
+
+  const closeDialog = () => {
+    dialog.close();
+    clearAllBodyScrollLocks();
+  };
 </script>
 
-<div class="fixed top-3 right-6 flex items-center justify-center">
-  <button
-    type="button"
-    on:click={() => (isOpen = true)}
-    class="rounded-md px-2 py-2 text-sm text-slate-600 hover:text-slate-800"
-  >
-    <IconBars />
-  </button>
-</div>
+<div class="relative">
+  <div class="fixed top-3 right-6 flex items-center justify-center">
+    <button
+      type="button"
+      on:click={showDialog}
+      class="rounded-md px-2 py-2 text-sm text-slate-600 hover:text-slate-800"
+    >
+      <IconBars />
+    </button>
+  </div>
 
-<Dialog open={isOpen} on:close={() => (isOpen = false)} class="relative z-20">
-  <DialogOverlay class="fixed inset-0 bg-slate-800/20 backdrop-blur-sm" />
-
-  <div
-    class="fixed top-4 right-4 overflow-y-auto rounded-md bg-slate-50 shadow-md"
+  <dialog
+    bind:this={dialog}
+    class="fixed top-4 right-4 overflow-y-auto rounded-md bg-slate-50 shadow-md backdrop:bg-slate-900/20 backdrop:backdrop-blur-sm open:inline-block"
   >
     <div
       class="flex min-h-full flex-row-reverse place-items-start gap-20 py-6 pr-6 pl-10"
     >
-      <button
-        type="button"
-        on:click={() => (isOpen = false)}
-        class=" -mx-2 -my-2 px-2 py-2"
-      >
+      <button on:click={closeDialog}>
         <IconClose />
       </button>
+
       <ul
         class="flex flex-col gap-3 font-barlow-semi text-xl font-semibold tracking-wider"
       >
@@ -66,7 +84,14 @@
             </a>
           </li>
         {/each}
+        {#each externalLinks as externalLink (externalLink.label)}
+          <li>
+            <a href={externalLink.href}>
+              {externalLink.label}
+            </a>
+          </li>
+        {/each}
       </ul>
     </div>
-  </div>
-</Dialog>
+  </dialog>
+</div>
