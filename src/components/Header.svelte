@@ -3,9 +3,10 @@
   import NavigationMenu from './UI/NavigationMenu.svelte';
 
   export let mainTitle: string;
+  export let currentPage: string;
 </script>
 
-<header class=" bg-slate-50/30 backdrop-blur-md">
+<header class="bg-slate-50/30 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6">
     <a
       href="/"
@@ -17,7 +18,7 @@
       <ExternalLinks />
     </div>
     <div class="md:hidden">
-      <NavigationMenu />
+      <NavigationMenu {currentPage} />
     </div>
   </div>
 </header>
