@@ -105,7 +105,7 @@
         </div>
 
         <div
-          class="mt-2 flex gap-6 border-t border-t-slate-300 px-1 pt-4 text-xl text-slate-700 duration-150 hover:text-slate-900"
+          class="mt-2 flex gap-6 border-t border-t-slate-300 px-1 pt-4 font-barlow-semi text-lg font-semibold tracking-wide text-slate-700 duration-150 hover:text-slate-900"
         >
           {#each externalLinks as externalLink (externalLink.label)}
             <li>
