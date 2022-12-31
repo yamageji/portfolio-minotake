@@ -1,16 +1,6 @@
-<script lant="ts">
+<script lang="ts">
+  import { externalLinks } from '@library/linkData';
   import IconArrowTopRightOnSquare from '@components/icons/IconArrowTopRightOnSquare.svelte';
-
-  const externalLinks = [
-    {
-      label: 'GitHub',
-      href: 'https://github.com/K-shigehito',
-    },
-    {
-      label: 'Twitter',
-      href: 'https://twitter.com/chabatake5',
-    },
-  ];
 </script>
 
 <div>

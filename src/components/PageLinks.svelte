@@ -1,24 +1,6 @@
 <script lang="ts">
+  import { pageLinks } from '@library/linkData';
   export let currentPage: string;
-
-  const pageLinks = [
-    {
-      label: 'ABOUT',
-      href: '/',
-    },
-    {
-      label: 'WORKS',
-      href: '/works',
-    },
-    {
-      label: 'ARTICLES',
-      href: '/articles/1',
-    },
-    {
-      label: 'PROFILE',
-      href: '/profile',
-    },
-  ];
 </script>
 
 <template>

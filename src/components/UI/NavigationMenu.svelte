@@ -1,70 +1,18 @@
 <script lang="ts">
-  import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-  // import type { BodyScrollOptions } from 'body-scroll-lock';
+  import { createEventDispatcher } from 'svelte';
+  import { externalLinks, pageLinks } from '@library/linkData';
 
-  import IconBars from '@components/icons/IconBars.svelte';
   import IconClose from '@components/icons/IconClose.svelte';
   import IconArrowTopRightOnSquare from '@components/icons/IconArrowTopRightOnSquare.svelte';
 
+  export let dialog: HTMLDialogElement;
   export let currentPage: string;
-  let dialog: HTMLDialogElement;
 
-  const pageLinks = [
-    {
-      label: 'ABOUT',
-      href: '/',
-    },
-    {
-      label: 'WORKS',
-      href: '/works',
-    },
-    {
-      label: 'ARTICLES',
-      href: '/articles/1',
-    },
-    {
-      label: 'PROFILE',
-      href: '/profile',
-    },
-  ];
-  const externalLinks = [
-    {
-      label: 'GitHub',
-      href: 'https://github.com/K-shigehito',
-    },
-    {
-      label: 'Twitter',
-      href: 'https://twitter.com/chabatake5',
-    },
-  ];
-
-  const showDialog = () => {
-    dialog.showModal();
-    dialog.addEventListener('click', (event) => {
-      if (event.target === dialog) {
-        dialog.close();
-        clearAllBodyScrollLocks();
-      }
-    });
-    disableBodyScroll(document.body);
-  };
-
-  const closeDialog = () => {
-    dialog.close();
-    clearAllBodyScrollLocks();
+  const dispatch = createEventDispatcher();
+  const clickClose = () => {
+    dispatch('closeDialog');
   };
 </script>
-
-<div class="fixed top-3 right-6 flex items-center justify-center">
-  <button
-    type="button"
-    on:click={showDialog}
-    class="rounded-md px-2 py-2 text-sm text-slate-700 hover:text-slate-900"
-  >
-    <span class="sr-only">メニュー</span>
-    <IconBars />
-  </button>
-</div>
 
 <dialog
   bind:this={dialog}
@@ -75,7 +23,7 @@
   >
     <button
       type="button"
-      on:click={closeDialog}
+      on:click={clickClose}
       class="z-10 col-start-1 row-start-1 -mr-5 -mt-8 rounded-md px-2 py-2 text-sm text-slate-700 hover:text-slate-900"
     >
       <span class="sr-only">閉じる</span>
