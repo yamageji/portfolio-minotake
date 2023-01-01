@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+  import { useMediaQuery } from '@library/useMediaquery';
   import ExternalLinks from '@components/ExternalLinks.svelte';
-  import NavigationMenu from './UI/NavigationMenu.svelte';
+  import NavigationMenu from '@components/UI/NavigationMenu.svelte';
   import IconBars from '@components/icons/IconBars.svelte';
 
   export let mainTitle: string;
@@ -22,9 +24,16 @@
 
   const closeDialog = () => {
     clearAllBodyScrollLocks();
+    dialog.close();
   };
 
-  // $: if (window.matchMedia('(min-width: 400px)').matches) dialog.close();
+  let mediaQuery;
+  onMount(() => {
+    mediaQuery = useMediaQuery('(min-width: 768px)');
+  });
+  $: if ($mediaQuery) {
+    closeDialog();
+  }
 </script>
 
 <header class="bg-slate-50/30 backdrop-blur-md">

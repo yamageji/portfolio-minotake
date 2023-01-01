@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { externalLinks, pageLinks } from '@library/linkData';
-
   import IconClose from '@components/icons/IconClose.svelte';
   import IconArrowTopRightOnSquare from '@components/icons/IconArrowTopRightOnSquare.svelte';
 
