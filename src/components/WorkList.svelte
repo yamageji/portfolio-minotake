@@ -10,23 +10,33 @@
       <li>
         {#if work.link}
           <a href={`/works/${work.slug}`}>
-            <img
-              src={work['main-image'].src}
-              alt={work['main-image'].altText}
-              width={work['main-image'].width}
-              height={work['main-image'].height}
-              class="aspect-video w-full rounded-lg border border-slate-200 shadow-md"
-            />
-            <h3 class="mt-4 text-xl font-bold">{work.title}</h3>
-            <ul class="mt-2 flex gap-2">
-              {#each work.category as category}
-                <li
-                  class="rounded-md bg-slate-200 px-2 py-0.5 font-barlow-semi text-sm font-semibold tracking-wider"
-                >
-                  {category}
-                </li>
-              {/each}
-            </ul>
+            <div class="group">
+              <div
+                class="aspect-video w-full overflow-hidden rounded-lg border border-slate-200 shadow-md"
+              >
+                <img
+                  src={work['main-image'].src}
+                  alt={work['main-image'].altText}
+                  width={work['main-image'].width}
+                  height={work['main-image'].height}
+                  class="duration-150 group-hover:scale-[1.03]"
+                />
+              </div>
+              <h3
+                class="mt-4 text-xl font-bold decoration-2 underline-offset-2 group-hover:underline"
+              >
+                {work.title}
+              </h3>
+              <ul class="mt-2 flex gap-2">
+                {#each work.category as category}
+                  <li
+                    class="rounded-md bg-slate-200 px-2 py-0.5 font-barlow-semi text-sm font-semibold tracking-wider"
+                  >
+                    {category}
+                  </li>
+                {/each}
+              </ul>
+            </div>
           </a>
         {/if}
       </li>
