@@ -1,12 +1,11 @@
 import { defineConfig } from 'astro/config';
-
-// https://astro.build/config
 import tailwind from '@astrojs/tailwind';
-
-// https://astro.build/config
 import svelte from '@astrojs/svelte';
+import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
+// const SITE_URL = '';
+
 export default defineConfig({
-  integrations: [tailwind(), svelte()],
+  // site: SITE_URL,
+  integrations: [tailwind(), svelte(), sitemap()],
 });
