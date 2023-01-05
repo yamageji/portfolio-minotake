@@ -18,7 +18,9 @@ export const convertDate = (date: string) => {
   const [year, month, dayAndOther] = date.split('-');
   const [day] = dayAndOther.split('T');
   const YYMMDD = `${year}.${month}.${day}`;
-  const monthYear = `${convertMonthToString(month)}, ${year}`;
+  const monthYear = `${convertMonthToString(
+    month as MonthConversionTable
+  )}, ${year}`;
   return { YYMMDD, monthYear };
 };
 

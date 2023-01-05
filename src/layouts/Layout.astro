@@ -39,17 +39,17 @@ const mainTitle = 'minotake';
         />
       </div>
 
-      <div
+      <aside
         class="sticky top-[130px] my-16 hidden h-60 md:col-span-1 md:col-start-2 md:block"
       >
         <PageLinks currentPage={currentPage} />
-      </div>
+      </aside>
 
-      <div
+      <main
         class="col-span-1 col-start-2 my-12 md:col-span-6 md:col-start-3 md:my-16"
       >
         <slot />
-      </div>
+      </main>
 
       <div class="col-span-3 col-start-1 mt-10 md:col-span-9">
         <Footer />
