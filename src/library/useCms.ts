@@ -26,6 +26,7 @@ export interface Work extends Content {
       caption?: string;
     };
   };
+  architectures?: string;
   link?: string;
   content?: string;
 }

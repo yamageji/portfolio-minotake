@@ -1,7 +1,9 @@
 <script lang="ts">
   import MoveIconMore from '@components/icons/MoveIconMore.svelte';
+  import IconArrowTopRightOnSquare from '@components/icons/IconArrowTopRightOnSquare.svelte';
 
   export let href: string;
+  export let type: 'link' | 'externalLink' = 'link';
 </script>
 
 <a
@@ -12,5 +14,9 @@ pl-5 font-barlow-semi text-xl font-semibold text-slate-700 duration-200 hover:bg
   <span class="mb-0.5 tracking-wide">
     <slot />
   </span>
-  <MoveIconMore />
+  {#if type === 'link'}
+    <MoveIconMore />
+  {:else}
+    <IconArrowTopRightOnSquare />
+  {/if}
 </a>
