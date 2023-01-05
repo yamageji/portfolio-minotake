@@ -52,7 +52,7 @@ const work = slug && (await getWork(slug));
           </div>
 
           <div class="self-end">
-            <LinkButton href={work.link}>visit site</LinkButton>
+            {work.link && <LinkButton href={work.link}>visit site</LinkButton>}
           </div>
         </div>
 

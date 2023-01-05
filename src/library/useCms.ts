@@ -5,16 +5,6 @@ export interface Article extends Content {
   date: string;
   platform: 'chabatake' | 'zenn';
   url: string;
-  'main-image'?: {
-    _id: string;
-    src: string;
-    fileType: string;
-    fileSize: number;
-    fileName: string;
-    width: number;
-    height: number;
-  };
-  content?: string;
 }
 
 export interface Work extends Content {
@@ -22,7 +12,7 @@ export interface Work extends Content {
   slug: string;
   date: string;
   category: ['web' | 'design'];
-  'main-image': {
+  'main-image'?: {
     _id: string;
     src: string;
     fileType: string;
@@ -36,8 +26,8 @@ export interface Work extends Content {
       caption?: string;
     };
   };
-  link: string;
-  content: string;
+  link?: string;
+  content?: string;
 }
 
 const client = createClient({

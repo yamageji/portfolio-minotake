@@ -14,13 +14,15 @@
               <div
                 class="aspect-video w-full overflow-hidden rounded-lg border border-slate-200 shadow-md"
               >
-                <img
-                  src={work['main-image'].src}
-                  alt={work['main-image'].altText}
-                  width={work['main-image'].width}
-                  height={work['main-image'].height}
-                  class="duration-150 group-hover:scale-[1.03]"
-                />
+                {#if work['main-image']}
+                  <img
+                    src={work['main-image'].src}
+                    alt={work['main-image'].altText}
+                    width={work['main-image'].width}
+                    height={work['main-image'].height}
+                    class="duration-150 group-hover:scale-[1.03]"
+                  />
+                {/if}
               </div>
               <h3
                 class="mt-4 text-xl font-bold decoration-2 underline-offset-2 group-hover:underline"

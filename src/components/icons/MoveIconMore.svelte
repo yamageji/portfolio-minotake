@@ -1,5 +1,5 @@
 <svg
-  class="mt-0.5 ml-2 -mr-1 stroke-slate-800 stroke-2"
+  class="mt-0.5 ml-2 -mr-1 stroke-slate-800 stroke-1"
   fill="none"
   width="16"
   height="16"

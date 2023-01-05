@@ -37,10 +37,12 @@
 </script>
 
 <header class="bg-slate-50/30 backdrop-blur-md">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6">
+  <div
+    class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 md:h-16"
+  >
     <a
       href="/"
-      class="font-barlow text-[44px] font-semibold tracking-wider text-slate-900"
+      class="font-barlow text-4xl font-semibold tracking-wider text-slate-900"
     >
       {mainTitle}
     </a>
@@ -50,7 +52,9 @@
     </div>
 
     <div class="md:hidden">
-      <div class="fixed top-3 right-6 flex items-center justify-center">
+      <div
+        class="fixed inset-y-0 right-4 left-auto flex items-center justify-center"
+      >
         <button
           type="button"
           on:click={showDialog}
