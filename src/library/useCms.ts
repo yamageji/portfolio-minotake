@@ -26,6 +26,20 @@ export interface Work extends Content {
       caption?: string;
     };
   };
+  subImage?: {
+    _id: string;
+    src: string;
+    fileType: string;
+    fileSize: number;
+    fileName: string;
+    width: number;
+    height: number;
+    altText?: string;
+    description?: string;
+    metadata?: {
+      caption?: string;
+    };
+  };
   architectures?: string;
   link?: string;
   content?: string;

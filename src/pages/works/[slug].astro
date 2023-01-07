@@ -53,7 +53,14 @@ const work = slug && (await getWork(slug));
         </div>
 
         <div class="mt-10">
-          <div class="h-80 w-full rounded-md bg-slate-300" />
+          {work.subImage && (
+            <img
+              class="w-full rounded-md shadow-md"
+              src={work.subImage.src}
+              width={work.subImage.width}
+              height={work.subImage.height}
+            />
+          )}
         </div>
 
         <div class="mt-6 text-end">
