@@ -74,10 +74,15 @@ const work = slug && (await getWork(slug));
           <h3 class="relative text-lg font-bold text-slate-800 before:absolute before:-left-4 before:top-[0.7rem] before:block before:h-2 before:w-2 before:rounded-full before:bg-slate-400">
             技術スタック
           </h3>
-          <p class="mt-1">{work.architectures}</p>
+          <p class="mt-2 leading-7">{work.architectures}</p>
         </div>
 
-        <p class="mt-10" set:html={work.content} />
+        <div class="mt-12 pl-4">
+          <h3 class="relative text-lg font-bold text-slate-800 before:absolute before:-left-4 before:top-[0.7rem] before:block before:h-2 before:w-2 before:rounded-full before:bg-slate-400">
+            制作物について
+          </h3>
+          <div class="mt-2 leading-7" set:html={work.content} />
+        </div>
       </div>
     )
   }
