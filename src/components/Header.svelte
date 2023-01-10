@@ -44,7 +44,7 @@
       href="/"
       class="font-barlow text-4xl font-semibold tracking-wider text-slate-900"
     >
-      {mainTitle}
+      <img src="minotake-rogo.png" width="140" alt="ロゴ：minotake" />
     </a>
 
     <div class="hidden md:block">
