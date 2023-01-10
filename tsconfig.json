@@ -6,7 +6,10 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
-      "@library/*": ["src/library/*"]
-    }
+      "@library/*": ["src/library/*"],
+      "@assets/*": ["src/assets/*"]
+    },
+    // Replace `astro/client` with `@astrojs/image/client`
+    "types": ["@astrojs/image/client"]
   }
 }
