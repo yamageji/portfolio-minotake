@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+// import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 import WorkList from '@components/WorkList.svelte';
 import ArticleList from '@components/ArticleList.svelte';
@@ -16,7 +16,7 @@ const works = await getAllWorks(4);
 <Layout title="minotake" currentPage="about">
   <main>
     <div class="">
-      <Image src={firstView} width="762" height="241" alt="" />
+      <img src={firstView} width="762" height="241" alt="" />
     </div>
 
     <div class="mt-20 md:mt-28">

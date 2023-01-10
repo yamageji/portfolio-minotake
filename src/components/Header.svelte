@@ -43,11 +43,7 @@
       href="/"
       class="font-barlow text-4xl font-semibold tracking-wider text-slate-900"
     >
-      <img
-        src="/src/assets/minotake-rogo.png"
-        width="140"
-        alt="ロゴ：minotake"
-      />
+      <img src="/minotake-rogo.svg" width="140" alt="ロゴ：minotake" />
     </a>
 
     <div class="hidden md:block">

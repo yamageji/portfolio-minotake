@@ -14,7 +14,6 @@ export interface Props {
 }
 
 const { title, currentPage } = Astro.props;
-const mainTitle = 'minotake';
 ---
 
 <!DOCTYPE html>
@@ -32,11 +31,7 @@ const mainTitle = 'minotake';
       class="grid min-h-screen grid-cols-layout-md grid-rows-layout-md gap-x-6 md:grid-cols-layout-lg md:grid-rows-layout-lg"
     >
       <div class="sticky top-0 z-10 col-span-3 col-start-1 md:col-span-9">
-        <Header
-          mainTitle={mainTitle}
-          currentPage={currentPage}
-          client:visible
-        />
+        <Header currentPage={currentPage} client:visible />
       </div>
 
       <aside
