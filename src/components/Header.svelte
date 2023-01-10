@@ -6,7 +6,6 @@
   import NavigationMenu from '@components/UI/NavigationMenu.svelte';
   import IconBars from '@components/icons/IconBars.svelte';
 
-  export let mainTitle: string;
   export let currentPage: string;
 
   let dialog: HTMLDialogElement;
@@ -44,7 +43,11 @@
       href="/"
       class="font-barlow text-4xl font-semibold tracking-wider text-slate-900"
     >
-      <img src="minotake-rogo.png" width="140" alt="ロゴ：minotake" />
+      <img
+        src="/src/assets/minotake-rogo.png"
+        width="140"
+        alt="ロゴ：minotake"
+      />
     </a>
 
     <div class="hidden md:block">

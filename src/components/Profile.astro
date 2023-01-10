@@ -1,8 +1,10 @@
-<script lang="ts">
-</script>
+---
+import { Image } from '@astrojs/image/components';
+import avatar from '@assets/avatar.png';
+---
 
 <div class="flex flex-col items-center justify-center">
-  <img src="avatar.png" width="240" height="240" alt="自画像のイラスト" />
+  <Image src={avatar} width="240" height="240" alt="自画像のイラスト" />
   <p
     class="mt-8 text-center font-barlow-semi text-4xl font-semibold tracking-wider text-slate-800"
   >
