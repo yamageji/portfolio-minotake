@@ -26,26 +26,26 @@
   </p>
 </div>
 
-<div class="mt-10 flex flex-col gap-3 text-base leading-7">
+<div class="mt-12 flex flex-col gap-3 text-base leading-7">
   {@html profile.description}
 </div>
 
 {#if isDetail}
   <h2
-    class="mt-10 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
   >
     Skills
   </h2>
-  <div class="ml-2 mt-1">
+  <div class="skills mt-1 ml-1">
     {@html profile.skills}
   </div>
 
   <h2
-    class="mt-10 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
   >
     Social Links
   </h2>
-  <ul class="mt-3 ml-2 flex w-full gap-4">
+  <ul class="mt-3 ml-1 flex w-full gap-4">
     {#each profile.snsLinks as snsLink (snsLink.name)}
       <li>
         <a href={snsLink.url} class="flex gap-2 font-bold">
@@ -64,3 +64,24 @@
     {/each}
   </ul>
 {/if}
+
+<style>
+  /* .skills {
+    @apply text-slate-800;
+  } */
+  .skills :global(h3) {
+    @apply mt-4 font-barlow-semi text-lg;
+  }
+  .skills :global(h3:nth-of-type(1)) {
+    @apply mt-2;
+  }
+  .skills :global(ul) {
+    @apply mt-2 flex flex-wrap gap-2 font-barlow-semi;
+  }
+  .skills :global(li) {
+    @apply rounded-md bg-slate-200 px-2 py-0.5;
+  }
+  .skills :global(p) {
+    @apply mt-2 text-sm leading-relaxed;
+  }
+</style>
