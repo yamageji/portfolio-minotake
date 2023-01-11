@@ -1,16 +1,16 @@
 ---
-// import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 import WorkList from '@components/WorkList.svelte';
 import ArticleList from '@components/ArticleList.svelte';
 import HeadingPrimary from '@components/UI/HeadingPrimary.svelte';
 import LinkButton from '@components/UI/LinkButton.svelte';
-import Profile from '@components/Profile.astro';
+import Profile from '@components/Profile.svelte';
 import firstView from '@assets/first-view.svg';
+import { getArticles, getAllWorks, getProfile } from '@library/useCms';
 
-import { getArticles, getAllWorks } from '@library/useCms';
 const articles = await getArticles(5);
 const works = await getAllWorks(4);
+const profile = await getProfile();
 ---
 
 <Layout title="minotake" currentPage="about">
@@ -21,28 +21,28 @@ const works = await getAllWorks(4);
 
     <div class="mt-20 md:mt-28">
       <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
-    </div>
-    <div class="mt-8 md:mt-10">
-      {works && <WorkList works={works} />}
       <div class="mt-8 md:mt-10">
-        <LinkButton href="./works">view more works</LinkButton>
+        {works && <WorkList works={works} />}
+        <div class="mt-8 md:mt-10">
+          <LinkButton href="./works">view more works</LinkButton>
+        </div>
       </div>
     </div>
 
     <div class="mt-20 md:mt-28">
       <HeadingPrimary title={{ en: 'ARTICLES', ja: '記事' }} />
-    </div>
-    <div class="mt-8 md:mt-10">
-      {articles && <ArticleList articles={articles} />}
       <div class="mt-8 md:mt-10">
-        <LinkButton href="./articles/1">view more articles</LinkButton>
+        {articles && <ArticleList articles={articles} />}
+        <div class="mt-8 md:mt-10">
+          <LinkButton href="./articles/1">view more articles</LinkButton>
+        </div>
       </div>
     </div>
 
     <div class="mt-20 md:mt-28">
       <HeadingPrimary title={{ en: 'PROFILE', ja: '自己紹介' }} />
       <div class="mt-8 flex flex-col items-center md:mt-10">
-        <Profile />
+        {profile && <Profile profile={profile} isDetail={false} />}
         <div class="mt-8 w-full md:mt-10">
           <LinkButton href="./profile">view more profile</LinkButton>
         </div>

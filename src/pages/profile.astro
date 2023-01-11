@@ -1,10 +1,7 @@
 ---
-import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 import PageHeading from '@components/UI/PageHeading.svelte';
-import IconGitHub from '@components/icons/IconGitHub.svelte';
-import IconTwitter from '@components/icons/IconTwitter.svelte';
-import IconZenn from '@components/icons/IconZenn.svelte';
+import Profile from '@components/Profile.svelte';
 import { getProfile } from '@library/useCms';
 
 const profile = await getProfile();
@@ -12,58 +9,7 @@ const profile = await getProfile();
 
 <Layout title="article page" currentPage="profile">
   <PageHeading title={{ en: 'PROFILE', ja: 'プロフィール' }} />
-
-  {
-    profile && (
-      <div class="mt-14">
-        <div class="flex flex-col items-center justify-center">
-          <Image
-            src={profile.avatar.src}
-            width={profile.avatar.width}
-            height={profile.avatar.height}
-            alt={profile.avatar.altText ? profile.avatar.altText : ''}
-            class="h-60 w-60"
-          />
-          <p class="font-barlow-semi mt-8 text-center text-4xl font-semibold tracking-wider text-slate-800">
-            {profile.englishName}
-          </p>
-          <p class="mt-2 text-xl font-bold text-slate-800">
-            {profile.japaneseName}
-          </p>
-        </div>
-
-        <div
-          class="mt-10 flex flex-col gap-3 text-base leading-7"
-          set:html={profile.description}
-        />
-
-        <h2 class="font-barlow-semi mt-10 flex items-center gap-3 text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400">
-          Skills
-        </h2>
-        <div set:html={profile.skills} class="ml-2 mt-1" />
-
-        <h2 class="font-barlow-semi mt-10 flex items-center gap-3 text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400">
-          Social Links
-        </h2>
-        <ul class="mt-3 ml-2 flex w-full gap-4">
-          {profile.snsLinks.map((snsLink) => (
-            <li>
-              <a href={snsLink.url} class="flex gap-2 font-bold">
-                <span class="sr-only">{snsLink.name}</span>
-                <span class="text-slate-500 duration-150 hover:text-slate-700">
-                  {snsLink.name === 'GitHub' ? (
-                    <IconGitHub class="h-6 w-6" />
-                  ) : snsLink.name === 'Twitter' ? (
-                    <IconTwitter class="h-6 w-6" />
-                  ) : (
-                    <IconZenn class="h-6 w-6" />
-                  )}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+  <div class="mt-8 md:mt-14">
+    {profile && <Profile profile={profile} isDetail={true} />}
+  </div>
 </Layout>
