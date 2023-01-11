@@ -39,11 +39,13 @@
   <div
     class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 md:h-16"
   >
-    <a
-      href="/"
-      class="font-barlow text-4xl font-semibold tracking-wider text-slate-900"
-    >
-      <img src="/minotake-rogo.svg" width="140" alt="ロゴ：minotake" />
+    <a href="/">
+      <img
+        class="h-8 text-left md:h-10"
+        src="/minotake-rogo.svg"
+        height="40"
+        alt="ロゴ：minotake"
+      />
     </a>
 
     <div class="hidden md:block">
