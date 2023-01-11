@@ -5,87 +5,95 @@ import PageHeading from '@components/UI/PageHeading.svelte';
 import IconGitHub from '@components/icons/IconGitHub.svelte';
 import IconTwitter from '@components/icons/IconTwitter.svelte';
 import IconZenn from '@components/icons/IconZenn.svelte';
-import avatar from '@assets/avatar.png';
+import { getProfile } from '@library/useCms';
+
+const profile = await getProfile();
 ---
 
 <Layout title="article page" currentPage="profile">
   <PageHeading title={{ en: 'PROFILE', ja: 'プロフィール' }} />
 
-  <div class="mt-14">
-    <div class="flex flex-col items-center justify-center">
-      <Image src={avatar} width="240" height="240" alt="自画像のイラスト" />
-      <p
-        class="mt-8 text-center font-barlow-semi text-4xl font-semibold tracking-wider text-slate-800"
-      >
-        KOYAMA SHIGEHITO
-      </p>
-      <p class="mt-2 text-xl font-bold text-slate-800">小山樹人</p>
-    </div>
+  {
+    profile && (
+      <div class="mt-14">
+        <div class="flex flex-col items-center justify-center">
+          <Image
+            src={profile.avatar.src}
+            width={profile.avatar.width}
+            height={profile.avatar.height}
+            alt={profile.avatar.altText ? profile.avatar.altText : ''}
+            class="h-60 w-60"
+          />
+          <p class="font-barlow-semi mt-8 text-center text-4xl font-semibold tracking-wider text-slate-800">
+            {profile.englishName}
+          </p>
+          <p class="mt-2 text-xl font-bold text-slate-800">
+            {profile.japaneseName}
+          </p>
+        </div>
 
-    <div class="mt-10 text-base leading-7">
-      <p class="mt-3">静岡県生まれ、東京在住の会社員。</p>
-      <p class="mt-3">
-        信州大学卒業後、桑沢デザイン研究所の夜間部でグラフィックデザインを学びました。卒業後は専門誌や教育系の出版物を中心にDTP制作の仕事を行っています。
-      </p>
-      <p class="mt-3">
-        最近の関心事はWeb技術とUIデザインの学習、趣味は将棋と散歩です。
-      </p>
-      <p class="mt-3">妻と1歳の子供、2匹の猫と共に生活しています。</p>
-    </div>
+        <div
+          class="mt-10 flex flex-col gap-3 text-base leading-7"
+          set:html={profile.description}
+        />
 
-    <h2
-      class="mt-10 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
-    >
-      Skills
-    </h2>
-    <ul class="ml-2">
-      <li>
-        <h3>Design tools</h3>
-        <ul>
-          <li>Illustrator</li>
-          <li>Indesign</li>
-          <li>Photoshop</li>
-          <li>Figma</li>
+        <h2 class="font-barlow-semi mt-10 flex items-center gap-3 text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400">
+          Skills
+        </h2>
+        <ul class="ml-2">
+          <li>
+            <h3>Design tools</h3>
+            <ul>
+              <li>Illustrator</li>
+              <li>Indesign</li>
+              <li>Photoshop</li>
+              <li>Figma</li>
+            </ul>
+          </li>
+          <li>
+            <h3>Development</h3>
+            <ul>
+              <li>JapaScript</li>
+            </ul>
+          </li>
         </ul>
-      </li>
-      <li>
-        <h3>Development</h3>
-        <ul>
-          <li>JapaScript</li>
-        </ul>
-      </li>
-    </ul>
 
-    <h2
-      class="mt-10 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
-    >
-      Social Links
-    </h2>
-    <ul class="mt-3 ml-2 flex w-full gap-4">
-      <li>
-        <a href="https://github.com/K-shigehito" class="flex gap-2 font-bold">
-          <span class="sr-only">GitHub</span>
-          <span class="text-slate-500 duration-150 hover:text-slate-700">
-            <IconGitHub class="h-6 w-6" />
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="https://twitter.com/chabatake5" class="flex gap-2 font-bold">
-          <span class="sr-only">Twitter</span>
-          <span class="text-slate-500 duration-150 hover:text-slate-700">
-            <IconTwitter class="h-6 w-6" />
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="https://zenn.dev/chabatake_i" class="flex gap-2 font-bold">
-          <span class="sr-only">Zenn</span>
-          <span class="text-slate-500 duration-150 hover:text-slate-700">
-            <IconZenn class="h-6 w-6" />
-          </span>
-        </a>
-      </li>
-    </ul>
-  </div>
+        <h2 class="font-barlow-semi mt-10 flex items-center gap-3 text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400">
+          Social Links
+        </h2>
+        <ul class="mt-3 ml-2 flex w-full gap-4">
+          <li>
+            <a
+              href="https://github.com/K-shigehito"
+              class="flex gap-2 font-bold"
+            >
+              <span class="sr-only">GitHub</span>
+              <span class="text-slate-500 duration-150 hover:text-slate-700">
+                <IconGitHub class="h-6 w-6" />
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/chabatake5"
+              class="flex gap-2 font-bold"
+            >
+              <span class="sr-only">Twitter</span>
+              <span class="text-slate-500 duration-150 hover:text-slate-700">
+                <IconTwitter class="h-6 w-6" />
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://zenn.dev/chabatake_i" class="flex gap-2 font-bold">
+              <span class="sr-only">Zenn</span>
+              <span class="text-slate-500 duration-150 hover:text-slate-700">
+                <IconZenn class="h-6 w-6" />
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    )
+  }
 </Layout>

@@ -44,6 +44,32 @@ export interface Work extends Content {
   link?: string;
   content?: string;
 }
+export interface Profile extends Content {
+  englishName: string;
+  japaneseName: string;
+  avatar: {
+    _id: string;
+    src: string;
+    fileType: string;
+    fileSize: number;
+    fileName: string;
+    width: number;
+    height: number;
+    altText?: string;
+    description?: string;
+    metadata?: {
+      caption?: string;
+    };
+  };
+  description: HTMLElement;
+  skills: HTMLElement;
+  snsLinks: [
+    {
+      name: string;
+      url: string;
+    }
+  ];
+}
 
 const client = createClient({
   spaceUid: import.meta.env.NEWT_SPACE_UID,
@@ -119,6 +145,19 @@ export const getWorksByCategory = async (
     return works.items;
   } catch (err) {
     console.log('~~ getWorksByCategory ~~');
+    console.log(err);
+  }
+};
+
+export const getProfile = async () => {
+  try {
+    const profile = await client.getFirstContent<Profile>({
+      appUid: 'portfolio',
+      modelUid: 'profile',
+    });
+    return profile;
+  } catch (err) {
+    console.log('~~ getProfile ~~');
     console.log(err);
   }
 };
