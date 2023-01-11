@@ -4,6 +4,7 @@
   viewBox="0 0 24 24"
   fill="currentColor"
   xmlns="http://www.w3.org/2000/svg"
+  {...$$restProps}
 >
   <g clip-path="url(#clip0_182_546)">
     <path

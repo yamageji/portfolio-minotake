@@ -19,7 +19,9 @@
             {#if article.platform === 'chabatake'}
               <IconChabatakeWeb />
             {:else if article.platform === 'zenn'}
-              <IconZenn />
+              <IconZenn
+                class="h-5 w-5 text-[#3EA8FF] md:h-[26px] md:w-[26px]"
+              />
             {/if}
           </div>
           <div
