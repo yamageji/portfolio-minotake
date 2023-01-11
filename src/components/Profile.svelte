@@ -55,7 +55,7 @@
               <IconGitHub class="h-6 w-6" />
             {:else if snsLink.name === 'Twitter'}
               <IconTwitter class="h-6 w-6" />
-            {:else}
+            {:else if snsLink.name === 'Zenn'}
               <IconZenn class="h-6 w-6" />
             {/if}
           </span>
