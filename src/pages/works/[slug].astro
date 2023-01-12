@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import { getWork, getAllWorks } from '@library/useCms';
 import { convertDate } from '@library/convertDate';
 import LinkButton from '@components/UI/LinkButton.svelte';
+import { Image } from '@astrojs/image/components';
 
 export const getStaticPaths = async () => {
   const works = await getAllWorks();
@@ -54,10 +55,11 @@ const work = slug && (await getWork(slug));
 
         <div class="mt-10 w-full overflow-hidden rounded-md border border-slate-200">
           {work.subImage && (
-            <img
-              src={work.subImage.src}
+            <Image
+              src={decodeURIComponent(work.subImage.src)}
               width={work.subImage.width}
               height={work.subImage.height}
+              alt=""
             />
           )}
         </div>

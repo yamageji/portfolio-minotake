@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 import WorkList from '@components/WorkList.svelte';
 import ArticleList from '@components/ArticleList.svelte';
@@ -16,7 +17,7 @@ const profile = await getProfile();
 <Layout title="minotake" currentPage="about">
   <main>
     <div class="py-2">
-      <img src={firstView} width="762" height="241" alt="" />
+      <Image src={firstView} width="762" height="241" alt="" />
     </div>
 
     <div class="mt-20 md:mt-28">
