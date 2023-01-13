@@ -35,9 +35,9 @@
   }
 </script>
 
-<header class="bg-slate-50/30 backdrop-blur-md">
+<header>
   <div
-    class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 md:h-16"
+    class="mx-auto flex h-14 max-w-[1080px] items-center justify-between px-6 md:h-16"
   >
     <a href="/">
       <img
