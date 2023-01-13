@@ -32,7 +32,7 @@
 
 {#if isDetail}
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl tracking-wide text-teal-500"
   >
     Skills
   </h2>
@@ -41,7 +41,7 @@
   </div>
 
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl tracking-wide text-teal-500"
   >
     Social Links
   </h2>
@@ -70,7 +70,7 @@
     @apply text-slate-800;
   } */
   .skills :global(h3) {
-    @apply mt-4 font-barlow-semi text-lg;
+    @apply mt-5 flex items-center gap-1.5 font-barlow-semi text-lg before:block before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-slate-500;
   }
   .skills :global(h3:nth-of-type(1)) {
     @apply mt-2;
