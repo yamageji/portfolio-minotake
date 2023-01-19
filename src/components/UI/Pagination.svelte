@@ -8,7 +8,7 @@
   const pager = [...Array(totalPageCount).keys()].map((i) => ++i);
 
   const getPath = (page: number) => {
-    return `./${page}`;
+    return `/${page}`;
   };
 </script>
 
