@@ -32,7 +32,7 @@
 
 {#if isDetail}
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl tracking-wide text-teal-500"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-teal-500"
   >
     Skills
   </h2>
@@ -41,7 +41,7 @@
   </div>
 
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl tracking-wide text-teal-500"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-teal-500"
   >
     Social Links
   </h2>
