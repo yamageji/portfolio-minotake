@@ -6,7 +6,7 @@ import ArticleList from '@components/ArticleList.svelte';
 import HeadingPrimary from '@components/UI/HeadingPrimary.svelte';
 import LinkButton from '@components/UI/LinkButton.svelte';
 import Profile from '@components/Profile.svelte';
-import firstView from '@assets/first-view.svg';
+import firstView from '/first-view.svg';
 import { getArticles, getAllWorks, getProfile } from '@library/useCms';
 
 const articles = await getArticles(5);
