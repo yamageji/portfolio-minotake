@@ -6,7 +6,6 @@ import ArticleList from '@components/ArticleList.svelte';
 import HeadingPrimary from '@components/UI/HeadingPrimary.svelte';
 import LinkButton from '@components/UI/LinkButton.svelte';
 import Profile from '@components/Profile.svelte';
-import firstView from '/first-view.svg';
 import { getArticles, getAllWorks, getProfile } from '@library/useCms';
 
 const articles = await getArticles(5);
@@ -17,7 +16,7 @@ const profile = await getProfile();
 <Layout title="minotake" currentPage="about">
   <main>
     <div class="py-2">
-      <Image src={firstView} width="762" height="241" alt="" />
+      <Image src="/first-view.svg" width="762" height="241" alt="" />
     </div>
 
     <div class="mt-20 md:mt-28">
