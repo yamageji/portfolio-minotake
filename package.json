@@ -39,5 +39,8 @@
     "prettier-plugin-astro": "^0.7.0",
     "prettier-plugin-svelte": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.0"
+  },
+  "volta": {
+    "node": "16.19.0"
   }
 }
