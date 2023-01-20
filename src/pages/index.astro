@@ -1,5 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 import WorkList from '@components/WorkList.svelte';
 import ArticleList from '@components/ArticleList.svelte';
@@ -13,7 +12,7 @@ const works = await getAllWorks(4);
 const profile = await getProfile();
 ---
 
-<Layout title="minotake" currentPage="about">
+<Layout currentPage="about">
   <main>
     <div class="py-2">
       <svg

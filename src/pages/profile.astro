@@ -4,10 +4,13 @@ import PageHeading from '@components/UI/PageHeading.svelte';
 import Profile from '@components/Profile.svelte';
 import { getProfile } from '@library/useCms';
 
+const title = 'Profile | minotake';
+const description = 'koyama shigehitoのプロフィールページ';
+
 const profile = await getProfile();
 ---
 
-<Layout title="article page" currentPage="profile">
+<Layout title={title} description={description} currentPage="profile">
   <PageHeading title={{ en: 'PROFILE', ja: 'プロフィール' }} />
   <div class="mt-8 md:mt-14">
     {profile && <Profile profile={profile} isDetail={true} />}

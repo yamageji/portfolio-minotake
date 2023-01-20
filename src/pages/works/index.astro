@@ -11,6 +11,9 @@ type TabList = {
   content: Work[] | undefined;
 };
 
+const title = 'Works | minotake';
+const description = 'koyama shigehitoの制作物一覧ページ';
+
 const allWorks = await getAllWorks();
 const designs = await getWorksByCategory('design');
 const development = await getWorksByCategory('development');
@@ -34,7 +37,7 @@ const tabList: TabList[] = [
 ];
 ---
 
-<Layout title="works page" currentPage="works">
+<Layout title={title} description={description} currentPage="works">
   <PageHeading title={{ en: 'WORKS', ja: '制作物' }} />
 
   <div class="mt-10 md:mt-14">

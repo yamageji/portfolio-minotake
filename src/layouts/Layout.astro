@@ -4,26 +4,24 @@ import '@fontsource/zen-kaku-gothic-new/700.css';
 import '@fontsource/barlow-condensed/600.css';
 import '@fontsource/barlow-semi-condensed/600.css';
 
+import MetaData from '@components/MetaData.astro';
 import Header from '@components/Header.svelte';
 import PageLinks from '@components/PageLinks.svelte';
 import Footer from '@components/Footer.svelte';
 
-export interface Props {
-  title: string;
+type Props = {
+  title?: string;
+  description?: string;
   currentPage: string;
-}
+};
 
-const { title, currentPage } = Astro.props;
+const { title, currentPage, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="ja" class="font-zen font-medium">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <MetaData title={title} description={description} />
   </head>
 
   <body class="bg-slate-50">

@@ -19,7 +19,11 @@ const { slug } = Astro.params;
 const work = slug && (await getWork(slug));
 ---
 
-<Layout title="work page" currentPage="works">
+<Layout
+  title={`${work ? work.title : ''} | minokake`}
+  description={`${work ? work.title : ''}の詳細ページ`}
+  currentPage="works"
+>
   {
     work && (
       <div class="">
