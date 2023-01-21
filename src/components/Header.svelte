@@ -4,6 +4,7 @@
   import { useMediaQuery } from '@library/useMediaquery';
   import ExternalLinks from '@components/ExternalLinks.svelte';
   import NavigationMenu from '@components/UI/NavigationMenu.svelte';
+  import MoveIconBars from '@components/icons/MoveIconBars.svelte';
   import IconBars from '@components/icons/IconBars.svelte';
 
   export let currentPage: string;
@@ -59,10 +60,10 @@
         <button
           type="button"
           on:click={showDialog}
-          class="rounded-md px-2 py-2 text-sm text-text-secondary hover:text-text-primary"
+          class="group w-10 rounded-md px-2 py-2 text-sm text-text-secondary hover:text-text-primary"
         >
           <span class="sr-only">メニュー</span>
-          <IconBars />
+          <MoveIconBars />
         </button>
       </div>
       <NavigationMenu bind:dialog on:closeDialog={closeDialog} {currentPage} />
