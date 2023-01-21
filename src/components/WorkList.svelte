@@ -12,7 +12,7 @@
           <a href={`/works/${work.slug}`}>
             <div class="group">
               <div
-                class="aspect-video w-full overflow-hidden rounded-lg border border-slate-200 shadow-md"
+                class="aspect-video w-full overflow-hidden rounded-lg border border-border-primary shadow-md"
               >
                 {#if work['main-image']}
                   <img
@@ -32,7 +32,7 @@
               <ul class="mt-2 flex gap-2">
                 {#each work.category as category}
                   <li
-                    class="rounded-md bg-slate-200 px-2 py-0.5 font-barlow-semi text-sm font-semibold tracking-wider"
+                    class="rounded-md bg-bg-primary px-2 py-0.5 font-barlow-semi text-sm font-semibold tracking-wider"
                   >
                     {category}
                   </li>

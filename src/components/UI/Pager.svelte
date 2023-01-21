@@ -7,14 +7,14 @@
 {#if currentPage === page}
   <a
     {href}
-    class="flex h-8 w-8 items-center justify-center rounded-[4px] border border-teal-500 text-xl text-teal-500 duration-150"
+    class="flex h-8 w-8 items-center justify-center rounded-[4px] border border-border-accent-primary text-xl text-text-accent-primary duration-150"
   >
     {page}
   </a>
 {:else}
   <a
     {href}
-    class="flex h-8 w-8 items-center justify-center rounded-[4px] text-xl text-slate-700 duration-150 hover:text-teal-500"
+    class="flex h-8 w-8 items-center justify-center rounded-[4px] text-xl text-text-secondary duration-150 hover:text-text-accent-primary"
   >
     {page}
   </a>

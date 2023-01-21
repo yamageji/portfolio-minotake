@@ -25,7 +25,7 @@
             {/if}
           </div>
           <div
-            class="font-barlow-semi text-base tracking-wide text-slate-700 md:text-lg"
+            class="font-barlow-semi text-base tracking-wide text-text-secondary md:text-lg"
           >
             {convertDate(article.date).YYMMDD}
           </div>
@@ -33,7 +33,7 @@
 
         <div class="ml-0.5">
           <span
-            class="mr-1.5 decoration-slate-700 decoration-2 underline-offset-4 group-hover:underline md:mr-2"
+            class="mr-1.5 decoration-border-tertiary decoration-2 underline-offset-4 group-hover:underline md:mr-2"
           >
             {article.title}
           </span>

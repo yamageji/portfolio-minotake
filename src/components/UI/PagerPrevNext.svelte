@@ -9,20 +9,24 @@
 {#if type === 'prev'}
   <a
     {href}
-    class="group mr-2 flex gap-1 text-base tracking-wider text-slate-700"
+    class="group mr-2 flex gap-1 text-base tracking-wider text-text-secondary"
   >
-    <span class="duration-150 group-hover:text-teal-500">
+    <span class="duration-150 group-hover:text-text-accent-primary">
       <IconChevronLeft />
     </span>
-    <span class="duration-150 group-hover:text-teal-500"> PREV </span>
+    <span class="duration-150 group-hover:text-text-accent-primary">
+      PREV
+    </span>
   </a>
 {:else if type === 'next'}
   <a
     {href}
-    class="group ml-2 flex gap-1 text-base tracking-wider text-slate-700"
+    class="group ml-2 flex gap-1 text-base tracking-wider text-text-secondary"
   >
-    <span class="duration-150 group-hover:text-teal-500"> NEXT </span>
-    <span class="duration-150 group-hover:text-teal-500">
+    <span class="duration-150 group-hover:text-text-accent-primary">
+      NEXT
+    </span>
+    <span class="duration-150 group-hover:text-text-accent-primary">
       <IconChevronRight />
     </span>
   </a>

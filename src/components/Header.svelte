@@ -35,7 +35,7 @@
   }
 </script>
 
-<header class="bg-slate-50/30 backdrop-blur-md">
+<header class="bg-bg-surface-primary/30 backdrop-blur-md">
   <div
     class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 md:h-16"
   >
@@ -59,7 +59,7 @@
         <button
           type="button"
           on:click={showDialog}
-          class="rounded-md px-2 py-2 text-sm text-slate-700 hover:text-slate-900"
+          class="rounded-md px-2 py-2 text-sm text-text-secondary hover:text-text-primary"
         >
           <span class="sr-only">メニュー</span>
           <IconBars />

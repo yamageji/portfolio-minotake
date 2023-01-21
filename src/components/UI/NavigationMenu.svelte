@@ -15,7 +15,7 @@
 
 <dialog
   bind:this={dialog}
-  class="absolute top-4 bottom-auto right-4 left-auto overflow-y-auto rounded-md bg-slate-50 shadow-md backdrop:bg-slate-900/20 backdrop:backdrop-blur-sm"
+  class="backdrop:bg-surface-secondary/20 absolute top-4 bottom-auto right-4 left-auto overflow-y-auto rounded-md bg-bg-surface-primary shadow-md backdrop:backdrop-blur-sm"
 >
   <div
     class="grid grid-cols-1 grid-rows-1 items-start justify-items-end px-4 pt-6 pb-3"
@@ -23,7 +23,7 @@
     <button
       type="button"
       on:click={clickClose}
-      class="z-10 col-start-1 row-start-1 -mr-5 -mt-8 rounded-md px-2 py-2 text-sm text-slate-700 hover:text-slate-900"
+      class="z-10 col-start-1 row-start-1 -mr-5 -mt-8 rounded-md px-2 py-2 text-sm text-text-secondary hover:text-text-primary"
     >
       <span class="sr-only">閉じる</span>
       <IconClose />
@@ -38,14 +38,14 @@
             {#if link.label === currentPage.toUpperCase()}
               <li>
                 <a
-                  class="flex items-center gap-4 before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-teal-500"
+                  class="flex items-center gap-4 before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-bg-accent-primary"
                   href={link.href}>{link.label}</a
                 >
               </li>
             {:else}
               <li>
                 <a
-                  class="flex items-center gap-4 text-slate-500 duration-150 before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-slate-400 hover:text-slate-900"
+                  class="flex items-center gap-4 text-text-tertiary duration-150 before:block before:h-2 before:w-2 before:shrink-0 before:rounded-full before:bg-bg-accent-secondary hover:text-text-primary"
                   href={link.href}>{link.label}</a
                 >
               </li>
@@ -54,7 +54,7 @@
         </div>
 
         <div
-          class="mt-2 flex gap-6 border-t border-t-slate-300 px-1 pt-4 font-barlow-semi text-lg font-semibold tracking-wide text-slate-600 duration-150 hover:text-slate-900"
+          class="mt-2 flex gap-6 border-t border-t-border-quaternary px-1 pt-4 font-barlow-semi text-lg font-semibold tracking-wide text-text-tertiary duration-150 hover:text-text-primary"
         >
           {#each externalLinks as externalLink (externalLink.label)}
             <li>

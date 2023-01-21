@@ -17,11 +17,11 @@
     class="h-60 w-60"
   />
   <p
-    class="mt-8 text-center font-barlow-semi text-4xl font-semibold tracking-wider text-slate-800"
+    class="mt-8 text-center font-barlow-semi text-4xl font-semibold tracking-wider text-text-quaternary"
   >
     {profile.englishName}
   </p>
-  <p class="mt-2 text-xl font-bold text-slate-800">
+  <p class="mt-2 text-xl font-bold text-text-quaternary">
     {profile.japaneseName}
   </p>
 </div>
@@ -32,7 +32,7 @@
 
 {#if isDetail}
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-teal-500"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-text-accent-primary"
   >
     Skills
   </h2>
@@ -41,7 +41,7 @@
   </div>
 
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-teal-500"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-text-accent-primary"
   >
     Social Links
   </h2>
@@ -50,7 +50,9 @@
       <li>
         <a href={snsLink.url} class="flex gap-2 font-bold">
           <span class="sr-only">{snsLink.name}</span>
-          <span class="text-slate-500 duration-150 hover:text-slate-700">
+          <span
+            class="text-text-tertiary duration-150 hover:text-text-secondary"
+          >
             {#if snsLink.name === 'GitHub'}
               <IconGitHub class="h-6 w-6" />
             {:else if snsLink.name === 'Twitter'}
@@ -67,10 +69,10 @@
 
 <style>
   /* .skills {
-    @apply text-slate-800;
+    @apply text-text-quaternary;
   } */
   .skills :global(h3) {
-    @apply mt-5 flex items-center gap-1.5 font-barlow-semi text-lg before:block before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-slate-500;
+    @apply mt-5 flex items-center gap-1.5 font-barlow-semi text-lg before:block before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-border-secondary;
   }
   .skills :global(h3:nth-of-type(1)) {
     @apply mt-2;
@@ -79,7 +81,7 @@
     @apply mt-2 flex flex-wrap gap-2 font-barlow-semi;
   }
   .skills :global(li) {
-    @apply rounded-md bg-slate-200 px-2 py-0.5;
+    @apply rounded-md bg-bg-primary px-2 py-0.5;
   }
   .skills :global(p) {
     @apply mt-2 text-sm leading-relaxed;

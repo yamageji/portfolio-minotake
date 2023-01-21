@@ -66,7 +66,7 @@
   <ul
     role="tablist"
     aria-label="works category"
-    class="flex gap-3 border-b-2  border-slate-200 font-barlow-semi text-xl font-semibold text-slate-600 md:gap-4 md:text-2xl"
+    class="flex gap-3 border-b-2  border-border-primary font-barlow-semi text-xl font-semibold text-text-tertiary md:gap-4 md:text-2xl"
   >
     {#each data as { id, title }, index}
       {@const currentActive = activeIndex === index}
@@ -84,7 +84,7 @@
           aria-selected={currentActive ? 'true' : 'false'}
           tabindex={currentActive ? 0 : -1}
           on:click={onClick}
-          class="relative block border-b-2 border-slate-200 px-1.5 py-1.5 tracking-wider duration-150 hover:text-slate-900 focus:text-slate-900 aria-selected:border-teal-500 aria-selected:text-slate-900 md:px-2 md:py-2"
+          class="relative block border-b-2 border-border-primary px-1.5 py-1.5 tracking-wider duration-150 hover:text-text-primary focus:text-text-primary aria-selected:border-border-accent-primary aria-selected:text-text-primary md:px-2 md:py-2"
         >
           {title}
         </button>
