@@ -42,7 +42,7 @@
   >
     <a href="/">
       <img
-        class="h-8 text-left md:h-10"
+        class="h-6 text-left md:h-7"
         src="/minotake-rogo.svg"
         height="40"
         alt="ロゴ：minotake"

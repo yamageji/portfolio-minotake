@@ -26,7 +26,7 @@ module.exports = {
       bg: {
         primary: '#E2E8F0', //slate-200
         secondary: '#334155', //slate-700
-        'surface-primary': '#F8FAFC', //teal-50
+        'surface-primary': '#F8FAFC', //slate-50
         'surface-secondary': '#0f172a', //slate-900
         'accent-primary': '#14b8a6', //teal-500
         'accent-secondary': '#94A3B8', //teal-400
@@ -45,6 +45,20 @@ module.exports = {
         tertiary: '#334155', //slate-700
         quaternary: '#CBD5E1', //slate-300
         'accent-primary': '#0d9488', //teal-600
+      },
+      fv: {
+        bg: {
+          primary: '#14b8a6',
+          secondary: '#cbd5e1',
+          tertiary: '#0d9488',
+          quaternary: '#94a3b8',
+        },
+        tx: {
+          primary: '#5eead4',
+          secondary: '#f1f5f9',
+          tertiary: '#2dd4bf',
+          quaternary: '#e2e8f0',
+        },
       },
     },
   },
