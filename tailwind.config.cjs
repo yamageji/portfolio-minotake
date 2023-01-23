@@ -48,15 +48,15 @@ module.exports = {
       },
       fv: {
         bg: {
-          primary: '#14b8a6',
-          secondary: '#cbd5e1',
-          tertiary: '#0d9488',
+          primary: '#2dd4bf',
+          secondary: '#94a3b8',
+          tertiary: '#cbd5e1',
           quaternary: '#94a3b8',
         },
         tx: {
-          primary: '#5eead4',
-          secondary: '#f1f5f9',
-          tertiary: '#2dd4bf',
+          primary: '#99f6e4',
+          secondary: '#e2e8f0',
+          tertiary: '#f1f5f9',
           quaternary: '#e2e8f0',
         },
       },
