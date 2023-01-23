@@ -12,7 +12,7 @@
           <a href={`/works/${work.slug}`}>
             <div class="group">
               <div
-                class="aspect-video w-full overflow-hidden rounded-lg border border-border-primary shadow-md"
+                class="aspect-video w-full overflow-hidden rounded border border-border-primary shadow-sm shadow-bg-primary"
               >
                 {#if work['main-image']}
                   <img

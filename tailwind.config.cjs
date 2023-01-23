@@ -16,7 +16,7 @@ module.exports = {
       gridTemplateColumns: {
         'layout-md': 'minmax(0, auto) 1fr minmax(0, auto)',
         'layout-lg':
-          'minmax(8px, auto) 232px repeat(6, minmax(0, 107px)) minmax(8px, auto)',
+          'minmax(8px, auto) 216px repeat(6, minmax(0, 107px)) minmax(8px, auto)',
       },
     },
     colors: {
@@ -49,15 +49,13 @@ module.exports = {
       fv: {
         bg: {
           primary: '#14b8a6',
-          secondary: '#f8fafc',
+          secondary: '#e2e8f0',
           tertiary: '#f8fafc',
-          quaternary: '#f8fafc',
         },
         tx: {
           primary: '#64748b',
-          secondary: '#94a3b8',
-          tertiary: '#cbd5e1',
-          quaternary: '#f8fafc',
+          secondary: '#e2e8f0',
+          tertiary: '#f8fafc',
         },
       },
     },
