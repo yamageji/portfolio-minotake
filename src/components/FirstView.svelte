@@ -11,7 +11,7 @@
     }
   };
   const backGroundColor = () => {
-    if (Math.random() < 0.25) {
+    if (Math.random() < 0.1) {
       return 'fill-fv-bg-primary';
     } else if (Math.random() < 0.5) {
       return 'fill-fv-bg-secondary';
