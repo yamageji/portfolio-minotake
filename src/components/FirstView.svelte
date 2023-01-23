@@ -20,7 +20,7 @@
     } else {
       return 'fill-fv-bg-quaternary';
     }
-    };
+  };
 </script>
 
 <svg
