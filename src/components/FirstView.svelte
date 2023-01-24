@@ -29,11 +29,14 @@
 </script>
 
 <svg
+  role="img"
   class="h-auto w-full"
   viewBox="0 0 578 218"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title>アルファベットの「minotake」をドットで表現したイメージビジュアル</title
+  >
   {#each textCircles as textCircle}
     {#if typeof textCircle[2] === 'string'}
       <circle

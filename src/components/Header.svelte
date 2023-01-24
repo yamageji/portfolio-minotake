@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
   import { useMediaQuery } from '@library/useMediaquery';
+  import Logo from '@components/Logo.svelte';
   import ExternalLinks from '@components/ExternalLinks.svelte';
   import NavigationMenu from '@components/UI/NavigationMenu.svelte';
   import MoveIconBars from '@components/icons/MoveIconBars.svelte';
@@ -51,14 +52,8 @@
   <div
     class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6 md:h-16"
   >
-    <a href="/">
-      <img
-        class="h-6 text-left md:h-7"
-        src="/minotake-rogo.svg"
-        width="85"
-        height="28"
-        alt="ロゴ：minotake"
-      />
+    <a href="/" class="-mx-2 p-2">
+      <Logo />
     </a>
 
     <div class="hidden md:block">

@@ -58,6 +58,10 @@ module.exports = {
         tx: {
           primary: '#64748b',
         },
+        logo: {
+          primary: '#14b8a6',
+          secondary: '#334155',
+        },
       },
     },
   },
