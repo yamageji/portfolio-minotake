@@ -5,14 +5,15 @@
   import ExternalLinks from '@components/ExternalLinks.svelte';
   import NavigationMenu from '@components/UI/NavigationMenu.svelte';
   import MoveIconBars from '@components/icons/MoveIconBars.svelte';
-  import IconBars from '@components/icons/IconBars.svelte';
 
   export let currentPage: string;
 
   let dialog: HTMLDialogElement;
+  let isClosing = true;
 
   const showDialog = () => {
     dialog.showModal();
+    requestAnimationFrame(() => (isClosing = false));
     dialog.addEventListener('click', (event) => {
       if (event.target === dialog) {
         dialog.close();
@@ -24,7 +25,9 @@
 
   const closeDialog = () => {
     clearAllBodyScrollLocks();
-    dialog.close();
+    dialog.addEventListener('transitionend', dialog.close, { once: true });
+    // dialog.close();
+    isClosing = true;
   };
 
   let mediaQuery;
@@ -67,7 +70,12 @@
           <MoveIconBars />
         </button>
       </div>
-      <NavigationMenu bind:dialog on:closeDialog={closeDialog} {currentPage} />
+      <NavigationMenu
+        bind:dialog
+        on:closeDialog={closeDialog}
+        {currentPage}
+        {isClosing}
+      />
     </div>
   </div>
 </header>

@@ -11,11 +11,17 @@
   const clickClose = () => {
     dispatch('closeDialog');
   };
+
+  export let isClosing = true;
+  const closingClass = 'scale-90 opacity-0 backdrop:opacity-0';
 </script>
 
+<div class="opacity-0 " />
 <dialog
   bind:this={dialog}
-  class="backdrop:bg-surface-secondary/20 absolute top-4 bottom-auto right-4 left-auto overflow-y-auto rounded-md bg-bg-surface-primary shadow-md backdrop:backdrop-blur-sm"
+  class={`${
+    isClosing && closingClass
+  } backdrop:bg-surface-secondary/20 absolute top-4 bottom-auto right-4 left-auto overflow-y-auto rounded-md bg-bg-surface-primary shadow-md duration-200 backdrop:backdrop-blur-sm backdrop:duration-200`}
 >
   <div
     class="grid grid-cols-1 grid-rows-1 items-start justify-items-end px-4 pt-6 pb-3"
