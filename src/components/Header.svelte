@@ -44,7 +44,8 @@
       <img
         class="h-6 text-left md:h-7"
         src="/minotake-rogo.svg"
-        height="40"
+        width="85"
+        height="28"
         alt="ロゴ：minotake"
       />
     </a>
