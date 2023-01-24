@@ -19,6 +19,11 @@ module.exports = {
           'minmax(8px, auto) 216px repeat(6, minmax(0, 107px)) minmax(8px, auto)',
       },
     },
+    screens: {
+      xs: '440px',
+      sm: '640px',
+      md: '768px',
+    },
     colors: {
       transparent: 'transparent',
       black: '#000',

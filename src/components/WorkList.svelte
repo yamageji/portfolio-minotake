@@ -25,7 +25,7 @@
                 {/if}
               </div>
               <h3
-                class="mt-4 text-xl font-bold decoration-2 underline-offset-2 group-hover:underline"
+                class="mt-3 text-xl font-bold decoration-2 underline-offset-2 group-hover:underline @[528px]:mt-2"
               >
                 {work.title}
               </h3>
