@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
   import type { Article } from '@library/useCms';
   import { convertDate } from '@library/convertDate';
   import IconArrowUpRight from '@components/icons/IconArrowUpRight.svelte';
@@ -20,7 +20,7 @@
               <IconChabatakeWeb />
             {:else if article.platform === 'zenn'}
               <IconZenn
-                class="h-5 w-5 text-[#3EA8FF] md:h-[26px] md:w-[26px]"
+                additionalClass="h-5 w-5 text-[#3EA8FF] md:h-[26px] md:w-[26px]"
               />
             {/if}
           </div>

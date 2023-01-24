@@ -1,10 +1,5 @@
-<script lang="ts">
-</script>
-
-<footer>
-  <div
-    class="flex h-20 w-full items-center justify-center bg-bg-secondary px-10 text-text-light"
-  >
-    © koyama shigehito
-  </div>
+<footer
+  class="flex h-14 w-full items-center justify-center border-t border-border-primary font-barlow-semi text-sm tracking-wide"
+>
+  © koyama shigehito
 </footer>

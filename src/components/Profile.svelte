@@ -54,11 +54,11 @@
             class="text-text-tertiary duration-150 hover:text-text-secondary"
           >
             {#if snsLink.name === 'GitHub'}
-              <IconGitHub class="h-6 w-6" />
+              <IconGitHub additionalClass="h-6 w-6" />
             {:else if snsLink.name === 'Twitter'}
-              <IconTwitter class="h-6 w-6" />
+              <IconTwitter additionalClass="h-6 w-6" />
             {:else if snsLink.name === 'Zenn'}
-              <IconZenn class="h-6 w-6" />
+              <IconZenn additionalClass="h-6 w-6" />
             {/if}
           </span>
         </a>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { textColorsData, backgroundCirclesData } from './circleData';
+  import { textColorsData, backgroundCirclesData } from '@library/circleData';
 
   const circleSize = 3;
 

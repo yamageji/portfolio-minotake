@@ -1,10 +1,14 @@
+<script lang="ts">
+  export let additionalClass: string;
+</script>
+
 <svg
   width="24"
   height="24"
   viewBox="0 0 24 24"
   fill="currentColor"
   xmlns="http://www.w3.org/2000/svg"
-  {...$$restProps}
+  class={additionalClass}
 >
   <g clip-path="url(#clip0_182_546)">
     <path

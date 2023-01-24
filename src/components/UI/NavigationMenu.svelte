@@ -21,7 +21,7 @@
   bind:this={dialog}
   class={`${
     isClosing && closingClass
-  } backdrop:bg-surface-secondary/20 absolute top-4 bottom-auto right-4 left-auto overflow-y-auto rounded-md bg-bg-surface-primary shadow-md duration-200 backdrop:backdrop-blur-sm backdrop:duration-200`}
+  } backdrop:bg-surface-secondary/20 absolute	 top-4 bottom-auto right-4 left-auto origin-top-right overflow-y-auto rounded-md bg-bg-surface-primary shadow-md duration-200 backdrop:backdrop-blur-sm backdrop:duration-200`}
 >
   <div
     class="grid grid-cols-1 grid-rows-1 items-start justify-items-end px-4 pt-6 pb-3"

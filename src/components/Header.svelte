@@ -16,17 +16,25 @@
     requestAnimationFrame(() => (isClosing = false));
     dialog.addEventListener('click', (event) => {
       if (event.target === dialog) {
-        dialog.close();
-        clearAllBodyScrollLocks();
+        closeDialog();
       }
     });
+    dialog.addEventListener(
+      'cancel',
+      function (e) {
+        e.preventDefault();
+        closeDialog();
+      },
+      false
+    );
     disableBodyScroll(document.body);
   };
 
   const closeDialog = () => {
     clearAllBodyScrollLocks();
-    dialog.addEventListener('transitionend', dialog.close, { once: true });
-    // dialog.close();
+    dialog.addEventListener('transitionend', () => dialog.close(), {
+      once: true,
+    });
     isClosing = true;
   };
 

@@ -49,11 +49,9 @@ module.exports = {
       fv: {
         bg: {
           primary: '#14b8a6',
-          secondary: '#e2e8f0',
         },
         tx: {
           primary: '#64748b',
-          secondary: '#e2e8f0',
         },
       },
     },
