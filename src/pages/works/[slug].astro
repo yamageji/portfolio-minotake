@@ -20,7 +20,7 @@ const work = slug && (await getWork(slug));
 ---
 
 <Layout
-  title={`${work ? work.title : ''} | minokake`}
+  title={`${work ? work.title : ''}`}
   description={`${work ? work.title : ''}の詳細ページ`}
   currentPage="works"
 >
@@ -33,7 +33,7 @@ const work = slug && (await getWork(slug));
 
         <div class="mt-12 flex gap-10 pl-4">
           <div class="font-barlow-semi flex flex-col gap-2 font-semibold">
-            <h3 class="before:bg-bg-accent-secondary text-text-secondary relative text-xl tracking-wide before:absolute before:-left-3.5 before:top-[0.72rem] before:block before:h-2 before:w-2 before:rounded-full">
+            <h3 class="text-text-secondary before:bg-bg-accent-secondary relative text-xl tracking-wide before:absolute before:-left-3.5 before:top-[0.72rem] before:block before:h-2 before:w-2 before:rounded-full">
               date
             </h3>
             <div class="text-md bg-bg-primary rounded-md py-0.5 px-2 tracking-wide">
@@ -42,7 +42,7 @@ const work = slug && (await getWork(slug));
           </div>
 
           <div class="font-barlow-semi flex flex-col gap-2 font-semibold">
-            <h3 class="before:bg-bg-accent-secondary text-text-secondary relative text-xl tracking-wide before:absolute before:-left-3.5 before:top-[0.72rem] before:block before:h-2 before:w-2 before:rounded-full">
+            <h3 class="text-text-secondary before:bg-bg-accent-secondary relative text-xl tracking-wide before:absolute before:-left-3.5 before:top-[0.72rem] before:block before:h-2 before:w-2 before:rounded-full">
               category
             </h3>
             <ul class=" flex gap-2 ">
@@ -79,14 +79,14 @@ const work = slug && (await getWork(slug));
         </div>
 
         <div class="mt-6 pl-4">
-          <h3 class="before:bg-bg-accent-secondary text-text-quaternary relative text-lg font-bold before:absolute before:-left-4 before:top-[0.7rem] before:block before:h-2 before:w-2 before:rounded-full">
+          <h3 class="text-text-quaternary before:bg-bg-accent-secondary relative text-lg font-bold before:absolute before:-left-4 before:top-[0.7rem] before:block before:h-2 before:w-2 before:rounded-full">
             技術スタック
           </h3>
           <p class="mt-2 leading-7">{work.architectures}</p>
         </div>
 
         <div class="mt-12 pl-4">
-          <h3 class="before:bg-bg-accent-secondary text-text-quaternary relative text-lg font-bold before:absolute before:-left-4 before:top-[0.7rem] before:block before:h-2 before:w-2 before:rounded-full">
+          <h3 class="text-text-quaternary before:bg-bg-accent-secondary relative text-lg font-bold before:absolute before:-left-4 before:top-[0.7rem] before:block before:h-2 before:w-2 before:rounded-full">
             制作物について
           </h3>
           <div class="mt-2 leading-7" set:html={work.content} />

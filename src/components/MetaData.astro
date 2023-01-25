@@ -1,13 +1,22 @@
 ---
+import { siteMeta } from '@library/constants';
+
 type Props = {
-  title?: string;
-  description?: string;
+  pageTitle?: string;
+  pageDescription?: string;
+  pageImg?: string;
 };
 
-const {
-  title = 'minotake',
-  description = 'The Portfolio of Koyama Shigehito',
-} = Astro.props;
+const { siteTitle, siteDescription, siteUrl, siteLocale, siteType, siteIcon } =
+  siteMeta;
+const { pageTitle, pageDescription, pageImg } = Astro.props;
+
+const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+const description = pageDescription ?? siteDescription;
+const url = Astro.url;
+
+const img = pageImg || '/og-image.png';
+const imgUrl = img.startsWith('https') ? img : `${siteUrl}${img}`;
 ---
 
 <meta charset="UTF-8" />
@@ -16,7 +25,20 @@ const {
 <meta name="generator" content={Astro.generator} />
 
 <title>{title}</title>
-<meta name="description" property="og:description" content={description} />
-<meta property="og:image" content="" />
-<meta property="og:image:alt" content="minotake" />
-<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:title" content={title} />
+
+<meta name="description" content={description} />
+<meta property="og:description" content={description} />
+
+<link rel="canonical" href={url} />
+<meta property="og:url" content={url} />
+
+<meta property="og:site_name" content={siteTitle} />
+<meta property="og:type" content={siteType} />
+<meta property="og:locale" content={siteLocale} />
+
+<link rel="icon" href={siteIcon} />
+<link rel="apple-touch-icon" href={siteIcon} />
+
+<meta property="og:image" content={imgUrl} />
+<meta name="twitter:cart" content="summary_large_image" />

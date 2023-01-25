@@ -13,7 +13,7 @@ export const getStaticPaths = async ({ paginate }: any) => {
 
 const { page } = Astro.props;
 
-const title = `Articles/${page.currentPage} | minokake`;
+const title = `Articles - page${page.currentPage}`;
 const description = 'koyama shigehitoのArticle一覧ページ';
 ---
 
