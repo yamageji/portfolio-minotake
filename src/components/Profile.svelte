@@ -84,6 +84,6 @@
     @apply rounded-md bg-bg-primary px-2 py-0.5;
   }
   .skills :global(p) {
-    @apply mt-2 text-sm leading-relaxed;
+    @apply mt-2 leading-relaxed;
   }
 </style>
