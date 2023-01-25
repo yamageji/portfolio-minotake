@@ -16,7 +16,7 @@
         </li>
       {:else}
         <li
-          class="before:bg-bg-accent-secondary flex items-center gap-4 text-text-tertiary duration-150 before:block before:h-2 before:w-10 before:shrink-0 before:rounded-full hover:text-text-primary"
+          class="flex items-center gap-4 text-text-tertiary duration-150 before:block before:h-2 before:w-10 before:shrink-0 before:rounded-full before:bg-bg-accent-secondary hover:text-text-primary"
         >
           <a href={link.href}>{link.label}</a>
         </li>

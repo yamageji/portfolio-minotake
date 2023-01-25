@@ -68,11 +68,19 @@
 {/if}
 
 <style>
-  /* .skills {
-    @apply text-text-quaternary;
-  } */
   .skills :global(h3) {
-    @apply mt-5 flex items-center gap-1.5 font-barlow-semi text-lg before:block before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-border-secondary;
+    @apply mt-5 flex items-center gap-1.5 font-barlow-semi
+    text-lg;
+  }
+  /* バグ？：@apply内で:beforeが使えない対応 */
+  .skills :global(h3::before) {
+    content: '';
+    display: block;
+    height: 0.375rem;
+    width: 0.375rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background-color: rgb(100 116 139);
   }
   .skills :global(h3:nth-of-type(1)) {
     @apply mt-2;
