@@ -9,6 +9,7 @@
 {#if type === 'prev'}
   <a
     {href}
+    aria-label="previous page"
     class="group mr-2 flex gap-1 text-base tracking-wider text-text-secondary"
   >
     <span class="duration-150 group-hover:text-text-accent-primary">
@@ -21,6 +22,7 @@
 {:else if type === 'next'}
   <a
     {href}
+    aria-label="next page"
     class="group ml-2 flex gap-1 text-base tracking-wider text-text-secondary"
   >
     <span class="duration-150 group-hover:text-text-accent-primary">

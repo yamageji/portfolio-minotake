@@ -1,58 +1,64 @@
 <script lang="ts">
-  import Pager from './Pager.svelte';
-  import PagerPrevNext from './PagerPrevNext.svelte';
+  import PaginationItem from './PaginationItem.svelte';
+  import PaginationPrevNext from './PaginationPrevNext.svelte';
+  import type { Page } from 'astro';
 
-  export let currentPage: number;
-  export let totalPageCount: number;
+  export let page: Page;
+  export let adjacentPageNumber = 1;
 
-  const pager = [...Array(totalPageCount).keys()].map((i) => ++i);
-
+  const pager = [...Array(page.lastPage).keys()].map((i) => ++i);
   const getPath = (page: number) => {
     return `/articles/${page}`;
   };
 </script>
 
-<nav>
+<nav aria-label="pagination">
   <ul
     class="flex items-center justify-center gap-1 font-barlow-semi text-sm font-semibold"
   >
-    {#if currentPage > 1}
+    {#if page.url.prev}
       <li>
-        <PagerPrevNext href={getPath(currentPage - 1)} type={'prev'} />
+        <PaginationPrevNext href={page.url.prev} type={'prev'} />
       </li>
     {/if}
 
-    {#if 2 < currentPage}
+    {#if adjacentPageNumber + 1 < page.currentPage}
       <li>
-        <Pager {currentPage} page={1} href={getPath(1)} />
+        <PaginationItem
+          currentPage={page.currentPage}
+          page={1}
+          href={getPath(1)}
+        />
       </li>
-    {/if}
-
-    {#if 3 < currentPage}
-      <li>...</li>
+      <li>&#8230;</li>
     {/if}
 
     {#each pager as p (p)}
-      {#if currentPage - 1 <= p && p <= currentPage + 1}
+      {#if page.currentPage - adjacentPageNumber <= p && p <= page.currentPage + adjacentPageNumber}
         <li>
-          <Pager {currentPage} page={p} href={getPath(p)} />
+          <PaginationItem
+            currentPage={page.currentPage}
+            page={p}
+            href={getPath(p)}
+          />
         </li>
       {/if}
     {/each}
 
-    {#if currentPage + 1 < pager.length}
-      <li>...</li>
-    {/if}
-
-    {#if currentPage + 1 < pager.length}
+    {#if page.currentPage < page.lastPage - adjacentPageNumber}
+      <li>&#8230;</li>
       <li>
-        <Pager {currentPage} page={pager.length} href={getPath(pager.length)} />
+        <PaginationItem
+          currentPage={page.currentPage}
+          page={page.lastPage}
+          href={getPath(page.lastPage)}
+        />
       </li>
     {/if}
 
-    {#if currentPage < pager.length}
+    {#if page.url.next}
       <li>
-        <PagerPrevNext href={getPath(currentPage + 1)} type={'next'} />
+        <PaginationPrevNext href={page.url.next} type={'next'} />
       </li>
     {/if}
   </ul>
