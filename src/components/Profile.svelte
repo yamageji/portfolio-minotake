@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Profile } from '@library/useCms';
+  import IconChabatakeWeb from './icons/IconChabatakeWeb.svelte';
   import IconGitHub from './icons/IconGitHub.svelte';
   import IconTwitter from './icons/IconTwitter.svelte';
   import IconZenn from './icons/IconZenn.svelte';
@@ -14,16 +15,18 @@
     width={profile.avatar.width}
     height={profile.avatar.height}
     alt={profile.avatar.altText ? profile.avatar.altText : ''}
-    class="h-60 w-60"
+    class="aspect-square w-72 md:w-80"
   />
-  <p
-    class="mt-8 text-center font-barlow-semi text-4xl font-semibold tracking-wider text-text-quaternary"
-  >
-    {profile.englishName}
-  </p>
-  <p class="mt-2 text-xl font-bold text-text-quaternary">
-    {profile.japaneseName}
-  </p>
+  <hgroup>
+    <h2
+      class="mt-8 text-center font-barlow-semi text-4xl font-semibold tracking-wider text-text-quaternary"
+    >
+      {profile.englishName}
+    </h2>
+    <p class="mt-2 text-center text-xl font-bold text-text-quaternary">
+      {profile.japaneseName}
+    </p>
+  </hgroup>
 </div>
 
 <div class="mt-12 flex flex-col gap-3 text-base leading-7">
@@ -32,33 +35,42 @@
 
 {#if isDetail}
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-text-accent-primary"
+    class="mt-12 flex items-center gap-3 text-2xl font-bold text-text-accent-primary md:mt-14"
   >
-    Skills
+    スキルや資格など
   </h2>
   <div class="skills mt-1 ml-1">
     {@html profile.skills}
   </div>
 
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-text-accent-primary"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-text-accent-primary md:mt-14"
   >
-    Social Links
+    Links
   </h2>
-  <ul class="mt-3 ml-1 flex w-full gap-4">
+  <ul class="mt-2 ml-1 flex w-full gap-4">
     {#each profile.snsLinks as snsLink (snsLink.name)}
       <li>
-        <a href={snsLink.url} class="flex gap-2 font-bold">
-          <span class="sr-only">{snsLink.name}</span>
+        <a
+          href={snsLink.url}
+          class="group flex items-center gap-1.5 font-bold text-text-tertiary duration-150 hover:text-text-secondary"
+        >
           <span
-            class="text-text-tertiary duration-150 hover:text-text-secondary"
+            class="font-barlow-semi text-lg underline-offset-2 group-hover:underline"
+            >{snsLink.name}</span
           >
+          <span class="">
             {#if snsLink.name === 'GitHub'}
-              <IconGitHub additionalClass="h-6 w-6" />
+              <IconGitHub additionalClass="h-5 w-5" />
             {:else if snsLink.name === 'Twitter'}
-              <IconTwitter additionalClass="h-6 w-6" />
+              <IconTwitter additionalClass="h-5 w-5" />
             {:else if snsLink.name === 'Zenn'}
-              <IconZenn additionalClass="h-6 w-6" />
+              <IconZenn additionalClass="h-5 w-5" />
+            {:else if snsLink.name === 'Blog'}
+              <IconChabatakeWeb
+                additionalClass="h-[25px] w-[25px] mt-0.5"
+                fillClass="currentColor"
+              />
             {/if}
           </span>
         </a>
@@ -69,11 +81,12 @@
 
 <style>
   .skills :global(h3) {
-    @apply mt-5 flex items-center gap-1.5 font-barlow-semi
-    text-lg;
+    @apply mt-5 flex items-center gap-1.5 text-lg
+    font-bold;
   }
   /* バグ？：@apply内で:beforeが使えない対応 */
   .skills :global(h3::before) {
+    margin-top: 0.1rem;
     content: '';
     display: block;
     height: 0.375rem;
@@ -83,7 +96,7 @@
     background-color: rgb(100 116 139);
   }
   .skills :global(h3:nth-of-type(1)) {
-    @apply mt-2;
+    @apply mt-4;
   }
   .skills :global(ul) {
     @apply mt-2 flex flex-wrap gap-2 font-barlow-semi;

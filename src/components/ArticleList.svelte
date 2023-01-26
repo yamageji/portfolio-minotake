@@ -17,7 +17,9 @@
         <div class="flex items-center gap-2 md:gap-3">
           <div>
             {#if article.platform === 'chabatake'}
-              <IconChabatakeWeb />
+              <IconChabatakeWeb
+                additionalClass="h-5 w-5 md:h-[26px] md:w-[26px]"
+              />
             {:else if article.platform === 'zenn'}
               <IconZenn
                 additionalClass="h-5 w-5 text-[#3EA8FF] md:h-[26px] md:w-[26px]"
@@ -33,7 +35,7 @@
 
         <div class="ml-0.5">
           <span
-            class="mr-1.5 decoration-border-tertiary decoration-2 underline-offset-4 group-hover:underline md:mr-2"
+            class="mr-1.5 decoration-border-tertiary decoration-1 underline-offset-4 group-hover:underline md:mr-2"
           >
             {article.title}
           </span>
