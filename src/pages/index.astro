@@ -14,39 +14,37 @@ const profile = await getProfile();
 ---
 
 <Layout currentPage="about">
-  <main>
-    <div class="-mt-3 xs:mt-0">
-      <FirstView client:load />
-    </div>
+  <div class="-mt-3 xs:mt-0">
+    <FirstView client:load />
+  </div>
 
-    <div class="mt-12 md:mt-14">
-      <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
+  <section class="mt-12 md:mt-14">
+    <HeadingPrimary title={{ en: 'WORKS', ja: '制作物' }} />
+    <div class="mt-8 md:mt-10">
+      {works && <WorkList works={works} />}
       <div class="mt-8 md:mt-10">
-        {works && <WorkList works={works} />}
-        <div class="mt-8 md:mt-10">
-          <LinkButton href="./works">view more works</LinkButton>
-        </div>
+        <LinkButton href="./works">view more works</LinkButton>
       </div>
     </div>
+  </section>
 
-    <div class="mt-20 md:mt-28">
-      <HeadingPrimary title={{ en: 'ARTICLES', ja: '記事' }} />
+  <section class="mt-20 md:mt-28">
+    <HeadingPrimary title={{ en: 'ARTICLES', ja: '記事' }} />
+    <div class="mt-8 md:mt-10">
+      {articles && <ArticleList articles={articles} />}
       <div class="mt-8 md:mt-10">
-        {articles && <ArticleList articles={articles} />}
-        <div class="mt-8 md:mt-10">
-          <LinkButton href="./articles/1">view more articles</LinkButton>
-        </div>
+        <LinkButton href="./articles/1">view more articles</LinkButton>
       </div>
     </div>
+  </section>
 
-    <div class="mt-20 md:mt-28">
-      <HeadingPrimary title={{ en: 'PROFILE', ja: '自己紹介' }} />
-      <div class="mt-8 flex flex-col items-center md:mt-10">
-        {profile && <Profile profile={profile} isDetail={false} />}
-        <div class="mt-8 w-full md:mt-10">
-          <LinkButton href="./profile">view more profile</LinkButton>
-        </div>
+  <section class="mt-20 md:mt-28">
+    <HeadingPrimary title={{ en: 'PROFILE', ja: '自己紹介' }} />
+    <div class="mt-8 flex flex-col items-center md:mt-10">
+      {profile && <Profile profile={profile} isDetail={false} />}
+      <div class="mt-8 w-full md:mt-10">
+        <LinkButton href="./profile">view more profile</LinkButton>
       </div>
     </div>
-  </main>
+  </section>
 </Layout>
