@@ -63,7 +63,7 @@ const work = slug && (await getWork(slug));
               src={decodeURIComponent(work.subImage.src)}
               width={work.subImage.width}
               height={work.subImage.height}
-              alt=""
+              alt={work.subImage.altText ? work.subImage.altText : ''}
             />
           ) : (
             <img src="/no-image_large.svg" width={762} height={360} alt="" />
