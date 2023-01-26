@@ -37,7 +37,7 @@
 >
   <title>アルファベットの「minotake」をドットで表現したイメージビジュアル</title
   >
-  {#each textCircles as textCircle}
+  {#each textCircles as textCircle, index (index)}
     {#if typeof textCircle[2] === 'string'}
       <circle
         cx={textCircle[0]}

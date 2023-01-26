@@ -27,7 +27,7 @@
   class="w-20 md:w-24"
 >
   <title>ロゴ：minotake</title>
-  {#each logoCircles as logoCircle}
+  {#each logoCircles as logoCircle, index (index)}
     {#if typeof logoCircle[1] === 'string'}
       <path d={logoCircle[0]} class={logoCircle[1]} />
     {/if}
