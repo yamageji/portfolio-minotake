@@ -12,9 +12,11 @@
 <div class="flex flex-col items-center justify-center">
   <img
     src={profile.avatar.src}
+    alt={profile.avatar.altText ? profile.avatar.altText : ''}
     width={profile.avatar.width}
     height={profile.avatar.height}
-    alt={profile.avatar.altText ? profile.avatar.altText : ''}
+    loading="lazy"
+    decoding="async"
     class="aspect-square w-72 md:w-80"
   />
   <hgroup>

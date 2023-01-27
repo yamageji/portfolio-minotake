@@ -19,6 +19,8 @@
                   alt={work['main-image'].altText}
                   width={work['main-image'].width}
                   height={work['main-image'].height}
+                  loading="lazy"
+                  decoding="async"
                   class="duration-150 group-hover:scale-[1.03]"
                 />
               {/if}
