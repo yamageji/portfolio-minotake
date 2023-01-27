@@ -17,7 +17,7 @@
     height={profile.avatar.height}
     loading="lazy"
     decoding="async"
-    class="aspect-square w-72 md:w-80"
+    class="aspect-square w-[50%] min-w-[16rem] sm:w-72"
   />
   <hgroup>
     <h2
