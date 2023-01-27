@@ -37,7 +37,7 @@
 
 {#if isDetail}
   <h2
-    class="mt-12 flex items-center gap-3 text-2xl font-bold text-text-accent-primary md:mt-14"
+    class="mt-12 flex items-center gap-3 text-2xl font-bold text-text-primary underline decoration-border-tertiary decoration-1 underline-offset-8 md:mt-14"
   >
     スキルや資格など
   </h2>
@@ -46,7 +46,7 @@
   </div>
 
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-text-accent-primary md:mt-14"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-2xl text-text-primary underline decoration-border-tertiary decoration-1 underline-offset-8 md:mt-14"
   >
     Links
   </h2>
