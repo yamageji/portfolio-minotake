@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { fade, slide, fly } from 'svelte/transition';
+  import { cubicIn } from 'svelte/easing';
+
   import WorkList from '@components/WorkList.svelte';
   import type { Work } from '@library/useCms';
 
@@ -105,7 +108,18 @@
         class="aria-hidden:hidden"
       >
         {#if content && content.length !== 0}
-          <WorkList works={content} />
+          {#if currentActive}
+            <div
+              in:fly={{
+                duration: 150,
+                y: 50,
+                opacity: 0.2,
+                easing: cubicIn,
+              }}
+            >
+              <WorkList works={content} />
+            </div>
+          {/if}
         {:else}
           <div>コンテンツがありません</div>
         {/if}
