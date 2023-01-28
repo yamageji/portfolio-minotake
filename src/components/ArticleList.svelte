@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { Article } from '@library/useCms';
-  import { convertDate } from '@library/convertDate';
   import IconArrowUpRight from '@components/icons/IconArrowUpRight.svelte';
   import IconZenn from '@components/icons/IconZenn.svelte';
   import IconChabatakeWeb from '@components/icons/IconChabatakeWeb.svelte';
@@ -26,11 +25,13 @@
               />
             {/if}
           </div>
-          <div
+
+          <time
+            datetime={article.date}
             class="font-barlow-semi text-base tracking-wide text-text-secondary md:text-lg"
           >
-            {convertDate(article.date).YYMMDD}
-          </div>
+            {new Date(article.date).toLocaleDateString('ja-JP')}
+          </time>
         </div>
 
         <div class="ml-0.5">

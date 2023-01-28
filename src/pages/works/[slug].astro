@@ -1,7 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { getWork, getAllWorks } from '@library/useCms';
-import { convertDate } from '@library/convertDate';
 import LinkButton from '@components/UI/LinkButton.svelte';
 import { Image } from '@astrojs/image/components';
 
@@ -36,9 +35,15 @@ const work = slug && (await getWork(slug));
             <h3 class="text-text-secondary before:bg-bg-accent-secondary relative text-xl tracking-wide before:absolute before:-left-3.5 before:top-[0.72rem] before:block before:h-2 before:w-2 before:rounded-full">
               date
             </h3>
-            <div class="text-md bg-bg-primary rounded-md py-0.5 px-2 tracking-wide">
-              {convertDate(work.date).monthYear}
-            </div>
+            <time
+              datetime={work.date}
+              class="text-md bg-bg-primary rounded-md py-0.5 px-2 tracking-wide"
+            >
+              {new Date(work.date).toLocaleDateString('en-US', {
+                month: 'short',
+                year: 'numeric',
+              })}
+            </time>
           </div>
 
           <div class="font-barlow-semi flex flex-col gap-2 font-semibold">
