@@ -7,16 +7,27 @@
   viewBox="0 0 22 22"
   aria-hidden="true"
 >
-  <line x1="0" y1="6" x2="20" y2="6" />
   <line
-    x1="0"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    x1="1"
+    y1="6"
+    x2="20"
+    y2="6"
+  />
+  <line
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    x1="1"
     y1="12"
     x2="20"
     y2="12"
     class="transition group-hover:scale-x-50"
   />
   <line
-    x1="0"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    x1="1"
     y1="18"
     x2="11"
     y2="18"
