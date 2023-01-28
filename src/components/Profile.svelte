@@ -21,7 +21,7 @@
   />
   <hgroup>
     <h2
-      class="mt-8 text-center font-barlow-semi text-4xl font-semibold tracking-wider text-text-quaternary"
+      class="mt-6 text-center font-barlow-semi text-3xl font-semibold tracking-wider text-text-quaternary sm:mt-8 sm:text-4xl"
     >
       {profile.englishName}
     </h2>
@@ -37,16 +37,16 @@
 
 {#if isDetail}
   <h2
-    class="mt-12 flex items-center gap-3 text-2xl font-bold text-text-accent-primary md:mt-14"
+    class="mt-14 flex items-center gap-3 text-2xl font-bold text-text-accent-primary md:mt-14"
   >
-    スキルや資格など
+    スキルや資格
   </h2>
   <div class="skills mt-1 ml-1">
     {@html profile.skills}
   </div>
 
   <h2
-    class="mt-12 flex items-center gap-3 font-barlow-semi text-3xl text-text-accent-primary md:mt-14"
+    class="mt-14 flex items-center gap-3 font-barlow-semi text-3xl text-text-accent-primary md:mt-14"
   >
     Links
   </h2>
@@ -55,12 +55,9 @@
       <li>
         <a
           href={snsLink.url}
-          class="group flex items-center gap-1.5 font-bold text-text-tertiary duration-150 hover:text-text-secondary"
+          class="flex items-center gap-1.5 font-bold text-text-tertiary underline-offset-2 duration-150 hover:text-text-secondary hover:underline"
         >
-          <span
-            class="font-barlow-semi text-lg underline-offset-2 group-hover:underline"
-            >{snsLink.name}</span
-          >
+          <span class="font-barlow-semi text-lg">{snsLink.name}</span>
           <span class="">
             {#if snsLink.name === 'GitHub'}
               <IconGitHub additionalClass="h-5 w-5" />
