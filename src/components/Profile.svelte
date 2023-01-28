@@ -46,7 +46,7 @@
   </div>
 
   <h2
-    class="mt-14 flex items-center gap-3 font-barlow-semi text-3xl text-text-accent-primary md:mt-14"
+    class="mt-12 flex items-center gap-3 font-barlow-semi text-3xl text-text-accent-primary md:mt-14"
   >
     Links
   </h2>
@@ -80,7 +80,7 @@
 
 <style>
   .skills :global(h3) {
-    @apply mt-5 flex items-center gap-1.5 text-lg
+    @apply mt-6 flex items-center gap-1.5 text-lg
     font-bold;
   }
   /* バグ？：@apply内で:beforeが使えない対応 */
