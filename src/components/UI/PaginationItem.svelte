@@ -5,8 +5,8 @@
 </script>
 
 {#if currentPage === page}
+  <!-- svelte-ignore a11y-missing-attribute -->
   <a
-    {href}
     aria-label={`page ${page}`}
     aria-current="page"
     class="flex h-8 w-8 items-center justify-center rounded-[4px] border border-border-accent-primary text-xl text-text-accent-primary duration-150"
