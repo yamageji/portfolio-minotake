@@ -112,7 +112,7 @@
             <div
               in:fly={{
                 duration: 300,
-                y: 100,
+                y: 75,
                 opacity: 0,
                 easing: quintIn,
               }}
