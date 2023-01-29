@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { fade, slide, fly } from 'svelte/transition';
-  import { cubicIn } from 'svelte/easing';
+  import { fly } from 'svelte/transition';
+  import { quintIn } from 'svelte/easing';
 
   import WorkList from '@components/WorkList.svelte';
   import type { Work } from '@library/useCms';
@@ -114,7 +114,7 @@
                 duration: 300,
                 y: 100,
                 opacity: 0,
-                easing: cubicIn,
+                easing: quintIn,
               }}
             >
               <WorkList works={content} />
