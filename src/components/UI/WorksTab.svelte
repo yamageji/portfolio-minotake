@@ -111,9 +111,9 @@
           {#if currentActive}
             <div
               in:fly={{
-                duration: 150,
-                y: 50,
-                opacity: 0.2,
+                duration: 300,
+                y: 100,
+                opacity: 0,
                 easing: cubicIn,
               }}
             >
