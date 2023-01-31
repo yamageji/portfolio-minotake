@@ -5,6 +5,7 @@
   stroke-width="1.5"
   stroke="currentColor"
   class="inline h-5 w-5 md:h-6 md:w-6"
+  aria-hidden="true"
 >
   <path
     stroke-linecap="round"
