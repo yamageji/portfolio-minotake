@@ -1,9 +1,9 @@
 ---
-import Layout from '@layouts/Layout.astro';
 import PageHeading from '@components/UI/PageHeading.svelte';
 import WorksTab from '@components/UI/WorksTab.svelte';
-import { getAllWorks, getWorksByCategory } from '@library/useCms';
+import Layout from '@layouts/Layout.astro';
 import type { Work } from '@library/useCms';
+import { getAllWorks, getWorksByCategory } from '@library/useCms';
 
 type TabList = {
   id: string;

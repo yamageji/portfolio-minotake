@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-  import { useMediaQuery } from '@library/useMediaquery';
-  import Logo from '@components/Logo.svelte';
   import ExternalLinks from '@components/ExternalLinks.svelte';
+  import Logo from '@components/Logo.svelte';
   import NavigationMenu from '@components/UI/NavigationMenu.svelte';
   import MoveIconBars from '@components/icons/MoveIconBars.svelte';
+  import { useMediaQuery } from '@library/useMediaquery';
+  import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock';
+  import { onMount } from 'svelte';
 
   export let currentPage: string;
 

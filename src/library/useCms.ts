@@ -1,4 +1,4 @@
-import { createClient, Content } from 'newt-client-js';
+import { Content, createClient } from 'newt-client-js';
 
 export interface Article extends Content {
   title: string;

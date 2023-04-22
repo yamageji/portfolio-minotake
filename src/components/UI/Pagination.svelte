@@ -1,7 +1,7 @@
 <script lang="ts">
+  import type { Page } from 'astro';
   import PaginationItem from './PaginationItem.svelte';
   import PaginationPrevNext from './PaginationPrevNext.svelte';
-  import type { Page } from 'astro';
 
   export let page: Page;
   export let adjacentPageNumber = 1;

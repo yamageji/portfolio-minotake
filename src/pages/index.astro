@@ -1,12 +1,12 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import WorkList from '@components/WorkList.svelte';
 import ArticleList from '@components/ArticleList.svelte';
+import FirstView from '@components/FirstView.svelte';
+import Profile from '@components/Profile.svelte';
 import HeadingPrimary from '@components/UI/HeadingPrimary.svelte';
 import LinkButton from '@components/UI/LinkButton.svelte';
-import Profile from '@components/Profile.svelte';
-import FirstView from '@components/FirstView.svelte';
-import { getArticles, getAllWorks, getProfile } from '@library/useCms';
+import WorkList from '@components/WorkList.svelte';
+import Layout from '@layouts/Layout.astro';
+import { getAllWorks, getArticles, getProfile } from '@library/useCms';
 
 const articles = await getArticles(5);
 const works = await getAllWorks(4);

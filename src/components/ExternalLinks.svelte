@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { externalLinks } from '@library/linkData';
   import IconArrowTopRightOnSquare from '@components/icons/IconArrowTopRightOnSquare.svelte';
+  import { externalLinks } from '@library/linkData';
 </script>
 
 <div>

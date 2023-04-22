@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition';
   import { quintIn } from 'svelte/easing';
+  import { fly } from 'svelte/transition';
 
   import WorkList from '@components/WorkList.svelte';
   import type { Work } from '@library/useCms';

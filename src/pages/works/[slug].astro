@@ -1,8 +1,8 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { getWork, getAllWorks } from '@library/useCms';
-import LinkButton from '@components/UI/LinkButton.svelte';
 import { Image } from '@astrojs/image/components';
+import LinkButton from '@components/UI/LinkButton.svelte';
+import Layout from '@layouts/Layout.astro';
+import { getAllWorks, getWork } from '@library/useCms';
 
 export const getStaticPaths = async () => {
   const works = await getAllWorks();

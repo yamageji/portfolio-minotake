@@ -1,6 +1,6 @@
 <script lang="ts">
-  import IconChevronRight from '@components/icons/IconChevronRight.svelte';
   import IconChevronLeft from '@components/icons/IconChevronLeft.svelte';
+  import IconChevronRight from '@components/icons/IconChevronRight.svelte';
 
   export let type: 'prev' | 'next';
   export let href: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import MoveIconMore from '@components/icons/MoveIconMore.svelte';
   import IconArrowTopRightOnSquare from '@components/icons/IconArrowTopRightOnSquare.svelte';
+  import MoveIconMore from '@components/icons/MoveIconMore.svelte';
 
   export let href: string;
   export let type: 'link' | 'externalLink' = 'link';
