@@ -3,16 +3,26 @@ import Profile from '@components/Profile.svelte';
 import PageHeading from '@components/UI/PageHeading.svelte';
 import Layout from '@layouts/Layout.astro';
 import { getProfile } from '@library/useCms';
+import { getImage } from 'astro:assets';
 
 const title = 'Profile';
 const description = 'koyama shigehitoのプロフィールページ';
 
 const profile = await getProfile();
+const optimazedAvatar = await getImage({
+  src: profile!.avatar.src,
+  width: profile!.avatar.width,
+  height: profile!.avatar.height,
+});
 ---
 
 <Layout title={title} description={description} currentPage="profile">
   <PageHeading title={{ en: 'PROFILE', ja: 'プロフィール' }} />
   <div class="mt-8 md:mt-14">
-    {profile && <Profile profile={profile} isDetail={true} />}
+    {
+      profile && (
+        <Profile profile={profile} avatar={optimazedAvatar} isDetail={true} />
+      )
+    }
   </div>
 </Layout>
