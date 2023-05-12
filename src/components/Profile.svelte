@@ -1,22 +1,21 @@
 <script lang="ts">
   import type { Profile } from '@library/useCms';
+  import type { GetImageResult } from 'astro';
   import IconChabatakeWeb from './icons/IconChabatakeWeb.svelte';
   import IconGitHub from './icons/IconGitHub.svelte';
   import IconTwitter from './icons/IconTwitter.svelte';
   import IconZenn from './icons/IconZenn.svelte';
 
   export let profile: Profile;
+  export let avatar: GetImageResult;
   export let isDetail: boolean;
 </script>
 
 <div class="flex flex-col items-center justify-center">
   <img
-    src={profile.avatar.src}
+    src={decodeURIComponent(avatar.src)}
     alt={profile.avatar.altText ? profile.avatar.altText : ''}
-    width={profile.avatar.width}
-    height={profile.avatar.height}
-    loading="lazy"
-    decoding="async"
+    {...avatar.attributes}
     class="aspect-square w-[50%] min-w-[16rem] sm:w-72"
   />
   <hgroup>
@@ -41,7 +40,7 @@
   >
     スキルや資格
   </h2>
-  <div class="skills mt-1 ml-1">
+  <div class="skills ml-1 mt-1">
     {@html profile.skills}
   </div>
 
@@ -50,7 +49,7 @@
   >
     Links
   </h2>
-  <ul class="mt-2 ml-1 flex w-full gap-4">
+  <ul class="ml-1 mt-2 flex w-full gap-4">
     {#each profile.snsLinks as snsLink (snsLink.name)}
       <li>
         <a

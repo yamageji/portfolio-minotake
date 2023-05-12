@@ -72,11 +72,13 @@ const work = slug && (await getWork(slug));
               alt={work.subImage.altText ? work.subImage.altText : ''}
             />
           ) : (
-            <Image
+            <img
               src={NoImage.src}
               alt="no image"
-              width={NoImage.width}
-              height={NoImage.height}
+              width={762}
+              height={360}
+              loading="lazy"
+              decoding="async"
             />
           )}
         </div>
