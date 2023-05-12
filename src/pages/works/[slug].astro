@@ -1,5 +1,6 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
+import NoImage from '@assets/no-image_large.svg';
 import LinkButton from '@components/UI/LinkButton.svelte';
 import Layout from '@layouts/Layout.astro';
 import { getAllWorks, getWork } from '@library/useCms';
@@ -37,7 +38,7 @@ const work = slug && (await getWork(slug));
             </h3>
             <time
               datetime={work.date}
-              class="text-md bg-bg-primary rounded-md py-0.5 px-2 tracking-wide"
+              class="text-md bg-bg-primary rounded-md px-2 py-0.5 tracking-wide"
             >
               {new Date(work.date).toLocaleDateString('en-US', {
                 month: 'short',
@@ -53,7 +54,7 @@ const work = slug && (await getWork(slug));
             <ul class=" flex gap-2 ">
               {work.category.map((item) => {
                 return (
-                  <li class="text-md bg-bg-primary rounded-md py-0.5 px-2 tracking-wide">
+                  <li class="text-md bg-bg-primary rounded-md px-2 py-0.5 tracking-wide">
                     {item}
                   </li>
                 );
@@ -71,13 +72,11 @@ const work = slug && (await getWork(slug));
               alt={work.subImage.altText ? work.subImage.altText : ''}
             />
           ) : (
-            <img
-              src="/no-image_large.svg"
+            <Image
+              src={NoImage.src}
               alt="no image"
-              width={762}
-              height={360}
-              loading="lazy"
-              decoding="async"
+              width={NoImage.width}
+              height={NoImage.height}
             />
           )}
         </div>
