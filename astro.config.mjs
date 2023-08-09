@@ -11,6 +11,7 @@ export default defineConfig({
   integrations: [tailwind(), svelte(), sitemap(), robotsTxt()],
   experimental: {
     assets: true,
+    viewTransitions: true,
   },
   image: {
     service: sharpImageService(),

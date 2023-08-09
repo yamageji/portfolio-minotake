@@ -1,5 +1,6 @@
 ---
 import { siteMeta } from '@library/constants';
+import { ViewTransitions } from 'astro:transitions';
 
 type Props = {
   pageTitle?: string;
@@ -42,3 +43,5 @@ const imgUrl = img.startsWith('https') ? img : `${siteUrl}${img}`;
 
 <meta property="og:image" content={imgUrl} />
 <meta name="twitter:card" content="summary_large_image" />
+
+<ViewTransitions fallback="swap" />
