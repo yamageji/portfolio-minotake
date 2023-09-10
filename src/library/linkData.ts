@@ -20,10 +20,10 @@ export const pageLinks = [
 export const externalLinks = [
   {
     label: 'GitHub',
-    href: 'https://github.com/K-shigehito',
+    href: 'https://github.com/yamageji',
   },
   {
     label: 'Twitter',
-    href: 'https://twitter.com/chabatake5',
+    href: 'https://twitter.com/yamageji',
   },
 ];
