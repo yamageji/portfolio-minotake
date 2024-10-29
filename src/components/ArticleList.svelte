@@ -2,6 +2,7 @@
   import IconArrowUpRight from '@components/icons/IconArrowUpRight.svelte';
   import IconChabatakeWeb from '@components/icons/IconChabatakeWeb.svelte';
   import IconZenn from '@components/icons/IconZenn.svelte';
+  import IconChomen from '@components/icons/IconChomen.svelte';
   import type { Article } from '@library/useCms';
 
   export let articles: Article[];
@@ -23,6 +24,8 @@
               <IconZenn
                 additionalClass="h-5 w-5 text-[#3EA8FF] md:h-[26px] md:w-[26px]"
               />
+            {:else if article.platform === 'chomen'}
+              <IconChomen />
             {/if}
           </div>
 
